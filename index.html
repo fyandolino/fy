@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/combined/all.css">
 		<title>fy</title>
 	</head>
-	<body class="loaded">
+	<body>
 		<!--[if lt IE 8]>
 	        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	    <![endif]-->
@@ -19,19 +19,16 @@
 	    <header>			
 			<div class="cbp-af-header">
 			    <div class="cbp-af-inner">
-			        <h1>Fixed</h1>
+			        <h1>header</h1>
 			        <nav>
-			            <a href="#">home</a>
-			            <a href="#">about</a>
-			            <a href="#">work</a>
-			            <a href="#">contact</a>
+			            <a href="javascript:void(0);" data-jump="slide-1">home</a>
+			            <a href="javascript:void(0);" data-jump="slide-2">about</a>
+			            <a href="javascript:void(0);" data-jump="slide-3">work</a>
+			            <a href="javascript:void(0);" data-jump="slide-4">contact</a>
 			        </nav>
 			    </div>
 			</div>
 		</header>
-
-
-
 
        	<main>
 	        <section id="slide-1" class="homeSlide">
@@ -42,7 +39,7 @@
 			        <div class="hsContainer">
 			            <div class="hsContent"
 			                data-center="bottom: 200px; opacity: 1"
-			                data-top="bottom: 550px; opacity: 0"
+			                data-top="bottom: 200px; opacity: 0"
 			                data-anchor-target="#slide-1 h2">
 			                <h2>Hello</h2>
 			            </div>
@@ -130,8 +127,30 @@
 			        </div>
 			    </div>
 			</section>
-		    
 		</main>
+
+		<div id="cbp-so-scroller" class="cbp-so-scroller">
+ 
+		    <section class="cbp-so-section">
+		        <article class="cbp-so-side cbp-so-side-left">
+		            <h2>Lorem Ipsum is</h2>
+		            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		        </article>
+		        <figure class="cbp-so-side cbp-so-side-right">
+		            <img src="images/1.png" alt="img01">
+		        </figure>
+		    </section>
+		 
+		    <section class="cbp-so-section">
+		        <figure class="cbp-so-side cbp-so-side-left">
+		            <img src="images/2.png" alt="img01">
+		        </figure>
+		        <article class="cbp-so-side cbp-so-side-right">
+		            <h2>Lorem Ipsum is</h2>
+		            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		        </article>
+		    </section>
+		</div>
    
 		<script type="text/javascript" src="/js/lib/concat/all.js"></script>
 		<script type="text/javascript" src="/js/src/max/fy.js"></script>

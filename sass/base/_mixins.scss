@@ -3,3 +3,11 @@
     text-indent:-9000px;
     display:block;
 }
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

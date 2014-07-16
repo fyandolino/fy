@@ -1,5 +1,11 @@
 /* BEGIN GLOBAL NAV */
 
+header {
+  height:230px;
+  @include clearfix;
+}
+
+
 .cbp-af-header {
     position: fixed;
     top: 0;

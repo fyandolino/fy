@@ -1,7 +1,7 @@
 @import "base/_variables.scss";
+@import "base/_mixins.scss";
 @import "base/_global.scss";
 @import "base/_layout.scss";
-@import "base/_mixins.scss";
 @import "base/_nav.scss";
 
 
@@ -30,6 +30,12 @@ section {
 
 main {
 	overflow-x: hidden;
+	@include clearfix;
+	-webkit-transition: all ease-out 1s;
+    -moz-transition: all ease-out 1s;
+    -o-transition: all ease-out 1s;
+    transition: all ease-out 1s;
+
 }
 
 #preload {
@@ -92,6 +98,7 @@ main {
 }
 
 #slide-1 {
+	height: 320px;
 	.bcg {
 		background-image:url('/img/bcg_slide-1.jpg');
 	}
@@ -104,7 +111,7 @@ main {
 
 #slide-2 {
 	height: 750px;
-	background-color: #f2f2f2;
+	background-color: #dedede;
 
 	/*.bcg {
 		background-image:url('/img/bcg_slide-2.jpg');
@@ -166,5 +173,134 @@ main {
 		opacity: 1;
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+/* SLIDE MODULE */
+
+
+.cbp-so-scroller {
+	margin-top: 3em;
+	overflow: hidden;
+	background-color:white;
+}
+
+.cbp-so-section {
+	margin-bottom: 15em;
+	position: relative;
+
+	&:before,&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear:both;
+	}
+
+	h2 {
+		font-size:22px;
+		font-weight: 300;
+		line-height: 1;
+	}
+
+	p {
+		font-size: 18px;
+		font-weight: 300;
+	}
+
+	&.cbp-so-animate {
+		.cbp-so-side-left,
+		.cbp-so-side-right {
+			-webkit-transform: translateX(0px);
+			-moz-transform: translateX(0px);
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
+}
+
+/* Sides */
+.cbp-so-side {
+	width: 50%;
+	float: left;
+	margin: 0;
+	padding: 3em 4%;
+	overflow: hidden;
+	min-height: 12em;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+
+	&:before,&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear:both;
+	}
+
+	&.cbp-so-side-right {
+		text-align: left;
+		img {
+			float: left;
+		}
+	}
+
+	&.cbp-so-side-left {
+		text-align: right;
+		img {
+			float:right;
+		}
+	}
+}
+
+/* Initial state (hidden or anything else) */
+.cbp-so-init {
+	&.cbp-so-side {
+		opacity: 0;
+		-webkit-transition: none;
+	    -moz-transition: none;
+	    transition: none;
+	}
+
+	.cbp-so-side-left {
+		-webkit-transform: translateX(-80px);
+		-moz-transform: translateX(-80px);
+		transform: translateX(-80px);
+	}
+
+	.cbp-so-side-right {
+		-webkit-transform: translateX(80px);
+		-moz-transform: translateX(80px);
+		transform: translateX(80px);
+	}
+
+}
+
+
+/* Example media queries */
+
+@media screen and (max-width: 73.5em) {
+	.cbp-so-scroller {
+		font-size: 65%;
+	}
+
+	.cbp-so-section h2 {
+		margin: 0;
+	}
+
+	.cbp-so-side img {
+		max-width: 120%;
+	}
+}
+
+@media screen and (max-width: 41.125em) {
+	.cbp-so-side {
+		float: none;
+		width: 100%;
+	}
+
+	.cbp-so-side img {
+		max-width: 100%;
 	}
 }

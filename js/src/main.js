@@ -15,11 +15,8 @@ var fy = $;
             /**
             Global This
             **/
-            var docElem = $(document),
-                header = $('.cbp-af-header'),
-                didScroll = false,
+            var didScroll = false,
                 changeHeaderOn = 300;    
-          
 
             /**
             Initializaiton function which runs at object instantiation time.
@@ -27,8 +24,6 @@ var fy = $;
             @method init
             **/
             function init() { 
-                console.log('hey now hello there');
-
                 // Init Skrollr
                 var s = skrollr.init({
                             forceHeight: false
@@ -37,54 +32,90 @@ var fy = $;
                 // Refresh Skrollr after resizing our sections
                 s.refresh($('.homeSlide'));
 
+                bindEvents(); 
 
-                bindEvents();                                
+                getViewportH();
+
             }
 
             function bindEvents() {
-
-                console.log(didScroll);
+                var myelement = $('.pricebox'); // the element to act on if viewable
 
                 $(window).scroll(function(){
-                    if( !didScroll ) {
-                        console.log('didScroll');
+                    if(!didScroll) {
                         didScroll = true;
-                        setTimeout( scrollPage, 250 );
+                        
+                        //setTimeout(function() {
+                            scrollPage(); 
+                            getViewportH();  
+                            //scrollTop();                                                    
+                        //}, 250);
                     }
+
+                    if(getViewportH(myelement)) {
+                        $('#prodbar').show();
+                    } else {
+                        $('#prodbar').hide();// do something when element is not viewable
+                    }
+
+
+
                 });
 
+                $('nav a').on('click', function(e) {
+                    e.preventDefault();
+                    var target = $(this).data('jump');
+                    if (target === 'slide-1') {
+                        fy.scrollTo($('header'));
+                    } else {
+                        fy.scrollTo($('#'+target+''));
+                    }                    
+                });
 
-                // $(window).scroll(function(event) {
-
-                //     if( !didScroll ) {
-                //         console.log('didScroll');
-                //         didScroll = true;
-                //         setTimeout( scrollPage, 250 );
-                //     }
-                // }, false );
             }
 
             function scrollPage() {
-                var sy = scrollY();
+                var sy = scrollY(),
+                    headerContainer = $('.cbp-af-header'),
+                    getHeight = headerContainer.height();
 
-                console.log('scrollPage');
-
-                if ( sy >= changeHeaderOn ) {
-                    $('.cbp-af-header').addClass('cbp-af-header-shrink');
+                if (sy >= changeHeaderOn) {                    
+                    headerContainer.addClass('cbp-af-header-shrink');  
+                    navHeight();
+                } else {                    
+                    headerContainer.removeClass('cbp-af-header-shrink' );        
+                    navHeight();     
                 }
-                else {
-                    $('.cbp-af-header').removeClass('cbp-af-header-shrink' );
-                }
-                didScroll = false;
+                didScroll = false;               
             }
 
             function scrollY() {
-
-                console.log('scrollY');
-
-                return window.pageYOffset || docElem.scrollTop;
+                return window.pageYOffset || $(document).scrollTop;
             }
-          
+
+            function navHeight() {
+
+                setTimeout(function() {
+                    var getHeight = $('.cbp-af-header').height();
+                    $('header').height(getHeight);
+                 }, 300);                
+            }
+
+            /* Scroll Events */
+
+            function getViewportH(elem) {
+
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+
+                var elemTop = $(elem).offset().top;
+                var elemBottom = elemTop + $(elem).height();
+
+                return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+            }
+
+
+        
             init();
     };
 
