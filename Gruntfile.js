@@ -1,3 +1,5 @@
+//var path = require('path');
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -9,8 +11,8 @@ module.exports = function(grunt) {
 
     	libraries: {
 			src: [
-				'js/lib/jquery.min.js', 
-				'js/lib/skrollr.js'
+				'public/js/lib/jquery.min.js', 
+				'public/js/lib/skrollr.js'
 				// 'js/lib/parse-1.2.18.min.js', 
 				// 'js/lib/handlebars-v1.3.0.js'
 				
@@ -18,24 +20,24 @@ module.exports = function(grunt) {
 				//'!js/src/*.min.js'			
 			],
 			
-			dest: 'js/lib/concat/all.js'
+			dest: 'public/js/lib/concat/all.js'
 		},
 
       	dist: {
 	        src: [
 	        	//'js/src/**/*.js'
-	        	'js/src/global.js',
-	        	'js/src/main.js'
+	        	'public/js/src/global.js',
+	        	'public/js/src/main.js'
 	        	],
-	        dest: 'js/src/max/<%= pkg.name %>.js'
+	        dest: 'public/js/src/max/<%= pkg.name %>.js'
 	    },
 
 	    css: {
 	    	src: [
-	    		'css/normalize.min.css',
-	    		'css/main.css'
+	    		'public/css/normalize.min.css',
+	    		'public/css/main.css'
 	    	],
-	    	dest: 'css/combined/all.css'
+	    	dest: 'public/css/combined/all.css'
 	    }
     },
 
@@ -48,7 +50,7 @@ module.exports = function(grunt) {
 	      compass: true
 	    },
 	    files: {
-	      'css/main.css': 'sass/main.scss'
+	      'public/css/main.css': 'sass/main.scss'
 	    }
 	  },
 	  dist: {
@@ -57,10 +59,20 @@ module.exports = function(grunt) {
 	      compass: true
 	    },
 	    files: {
-	      'css/main.css': 'sass/main.scss'
+	      'public/css/main.css': 'sass/main.scss'
 	    }
 	  }
 	},
+
+	express: {
+      defaults: {
+        options: {
+	        port: 1818,
+	        hostname: 'localhost',
+	        bases: 'public'
+	    }
+      }
+    },
 
     uglify: {
       options: {
@@ -68,13 +80,13 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'js/src/min/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'public/js/src/min/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
 
     jshint: {
-      files: ['Gruntfile.js', 'js/src/*.js'],
+      files: ['Gruntfile.js', 'public/js/src/*.js'],
       options: {
       	force: true,
 		bitwise: true,
@@ -112,12 +124,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
-
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['express','watch']);
 };
 
 
