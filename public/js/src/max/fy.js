@@ -65,41 +65,42 @@ var fy = $;
             **/
             function init() { 
                 // Init Skrollr
-                var s = skrollr.init({
-                            forceHeight: false
-                        });
+                // var s = skrollr.init({
+                //             forceHeight: false
+                //         });
                  
-                // Refresh Skrollr after resizing our sections
-                s.refresh($('.homeSlide'));
+                // // Refresh Skrollr after resizing our sections
+                // s.refresh($('.homeSlide'));
 
                 bindEvents(); 
 
-                getViewportH();
+                //getViewportH();
 
             }
 
             function bindEvents() {
-                var myelement = $('.pricebox'); // the element to act on if viewable
+                var myelement = $('.cbp-so-section'); // the element to act on if viewable
+
 
                 $(window).scroll(function(){
                     if(!didScroll) {
                         didScroll = true;
                         
-                        //setTimeout(function() {
-                            scrollPage(); 
-                            getViewportH();  
-                            //scrollTop();                                                    
-                        //}, 250);
+                        scrollPage(); 
+
+                        //getViewportH( scElm );  
                     }
 
                     if(getViewportH(myelement)) {
-                        $('#prodbar').show();
+                        console.log('show');
+                        
+                        $('.cbp-so-section').addClass('cbp-so-init');
+
                     } else {
-                        $('#prodbar').hide();// do something when element is not viewable
+                        console.log('hide');
+
+                        $('.cbp-so-section').removeClass('cbp-so-init');
                     }
-
-
-
                 });
 
                 $('nav a').on('click', function(e) {
@@ -151,8 +152,12 @@ var fy = $;
                 var elemTop = $(elem).offset().top;
                 var elemBottom = elemTop + $(elem).height();
 
-                return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-            }
+                //console.log('[docViewTop]',docViewTop, '[docViewBottom]',docViewBottom);
+                //console.log('[elemTop]',elemTop, '[elemBottom]',elemBottom);
+                
+                return ( (elemBottom >= docViewTop) && (elemTop <= docViewBottom - 500 ) );
+            
+             }
         
             init();
     };
