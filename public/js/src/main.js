@@ -1,7 +1,7 @@
 var fy = $;
 
 (function ($) {
-    /* global window, skrollr, setTimeout, console, Modernizr, clearTimeout */
+    /* global window, skrollr, setTimeout, setInterval, console, Modernizr, clearTimeout */
 
     /**
     Boilerplate Object reference for Samsung project.
@@ -16,7 +16,8 @@ var fy = $;
             Global This
             **/
             var didScroll = false,
-                changeHeaderOn = 300;    
+                changeHeaderOn = 300,
+                getPos = $('.cbp-so-scroller').position().top;   
 
             /**
             Initializaiton function which runs at object instantiation time.
@@ -24,43 +25,23 @@ var fy = $;
             @method init
             **/
             function init() { 
-                // Init Skrollr
-                // var s = skrollr.init({
-                //             forceHeight: false
-                //         });
-                 
-                // // Refresh Skrollr after resizing our sections
-                // s.refresh($('.homeSlide'));
-
                 bindEvents(); 
-
-                //getViewportH();
-
+                displayTitle();
             }
 
             function bindEvents() {
-                var myelement = $('.cbp-so-section'); // the element to act on if viewable
 
+                // the element to act on if viewable
+                var myelement = $('.cbp-so-section'),
+                    elementWidth = myelement.width() / 2;
 
                 $(window).scroll(function(){
                     if(!didScroll) {
                         didScroll = true;
-                        
+                       
                         scrollPage(); 
-
-                        //getViewportH( scElm );  
-                    }
-
-                    if(getViewportH(myelement)) {
-                        console.log('show');
-                        
-                        $('.cbp-so-section').addClass('cbp-so-init');
-
-                    } else {
-                        console.log('hide');
-
-                        $('.cbp-so-section').removeClass('cbp-so-init');
-                    }
+                        elemAnimate();
+                    }                    
                 });
 
                 $('nav a').on('click', function(e) {
@@ -69,25 +50,84 @@ var fy = $;
                     if (target === 'slide-1') {
                         fy.scrollTo($('header'));
                     } else {
-                        fy.scrollTo($('#'+target+''));
+                        fy.scrollTo(  $('#'+target+''), $('#'+target+'').offset().top-$('.cbp-af-header').outerHeight() );
                     }                    
                 });
+            }
 
+            function displayTitle() {
+
+                var titles = ['creative developer', 'front-end designer','ux developer', 'front-end artist', 'code poet'];
+
+                $('.title').html(titles[0]);
+
+                var i = 1;
+                setInterval(function(){
+                    $('.title').hide().html(titles[i]).fadeIn();                    
+                    i++;
+                    if(i >= titles.length) { i = 0; }
+                },4000);
+            }
+
+
+            function elemAnimate() {
+
+                // the element to act on if viewable
+                var imgElem = $('.hdr-cc'),
+                    slideElem = $('.cbp-so-section'),
+                    elementWidth = slideElem.width() / 2;
+
+                if(!getViewportH(slideElem)) {                       
+                    $('.cbp-so-side-right').css({
+                        '-webkit-transform': 'translateX('+elementWidth+'px)',
+                        '-moz-transform': 'translateX('+elementWidth+'px)',
+                        'transform': 'translateX('+elementWidth+'px)'
+                    });
+                    $('.cbp-so-side-left').css({
+                        '-webkit-transform': 'translateX(-'+elementWidth+'px)',
+                        '-moz-transform': 'translateX(-'+elementWidth+'px)',
+                        'transform': 'translateX(-'+elementWidth+'px)'                         
+                    });
+
+                } else {
+                    $('.cbp-so-side-left, .cbp-so-side-right').css({
+                        '-webkit-transform': 'translateX(0px)',
+                        '-moz-transform': 'translateX(0px)',
+                        'transform': 'translateX(0px)'
+                    });
+                }
+
+                if(!getViewportH(imgElem)) { 
+                    imgElem.addClass('moveBG');  
+                } else {
+                    imgElem.removeClass('moveBG');  
+                }
             }
 
             function scrollPage() {
                 var sy = scrollY(),
                     headerContainer = $('.cbp-af-header'),
-                    getHeight = headerContainer.height();
+                    getHeight = headerContainer.height(),
+                    scrolledPast = false;
 
                 if (sy >= changeHeaderOn) {                    
                     headerContainer.addClass('cbp-af-header-shrink');  
                     navHeight();
                 } else {                    
-                    headerContainer.removeClass('cbp-af-header-shrink' );        
-                    navHeight();     
+                    headerContainer.removeClass('cbp-af-header-shrink');        
+                    navHeight();  
                 }
-                didScroll = false;               
+
+                // if (sy >= getPos && scrolledPast === false ) {       
+                //     console.log('yes!!!!');
+
+                //     scrolledPast = true;
+
+                // } else {
+                //     console.log('hey no');
+                // }
+
+                didScroll = false;  
             }
 
             function scrollY() {
@@ -106,16 +146,14 @@ var fy = $;
 
             function getViewportH(elem) {
 
-                var docViewTop = $(window).scrollTop();
-                var docViewBottom = docViewTop + $(window).height();
+                var docViewTop = $(window).scrollTop(),
+                    docViewBottom = docViewTop + $(window).height(),
+                    elemTop = $(elem).offset().top,
+                    elemBottom = elemTop + $(elem).height();
 
-                var elemTop = $(elem).offset().top;
-                var elemBottom = elemTop + $(elem).height();
+                //return ((elemBottom >= docViewTop - ($(elem).height() * 0.9)  ) && (elemTop <= docViewBottom - ($(elem).height() * 0.9)  ));
 
-                //console.log('[docViewTop]',docViewTop, '[docViewBottom]',docViewBottom);
-                //console.log('[elemTop]',elemTop, '[elemBottom]',elemBottom);
-                
-                return ( (elemBottom >= docViewTop) && (elemTop <= docViewBottom - 500 ) );
+                return ( elemTop <= docViewBottom - ($(elem).height() * 0.9)) && (elemTop > docViewTop - ($(elem).height() * 0.9) );
             
              }
         

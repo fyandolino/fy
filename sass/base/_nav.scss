@@ -70,7 +70,10 @@ header {
       }
 
       nav {
-        float: right;
+        float:none;
+        @media screen and (min-width: $tablet-break) {
+          float: right;
+        } 
       }
 
       nav a  {

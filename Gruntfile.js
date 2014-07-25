@@ -11,10 +11,7 @@ module.exports = function(grunt) {
 
     	libraries: {
 			src: [
-				'public/js/lib/jquery.min.js', 
-				'public/js/lib/skrollr.js'
-				// 'js/lib/parse-1.2.18.min.js', 
-				// 'js/lib/handlebars-v1.3.0.js'
+				'public/js/lib/jquery.min.js'
 				
 				/* DO NOT CONCATENATE MINIFIED FILES */
 				//'!js/src/*.min.js'			

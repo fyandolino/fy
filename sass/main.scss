@@ -25,26 +25,17 @@ body {
 }
 
 section {
-	//min-width: 960px;
+	//min-width: 960px;	
 }
 
 main {
 	overflow-x: hidden;
 	@include clearfix;
 	-webkit-transition: all ease-out 1s;
-    -moz-transition: all ease-out 1s;
+    -moz-transition: all ease-out 1s;	
     -o-transition: all ease-out 1s;
     transition: all ease-out 1s;
 
-}
-
-#preload {
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 
 .homeSlide {
@@ -56,137 +47,92 @@ main {
 		background-size: cover;
 		height: 100%;
 		width: 100%;
-
 		-webkit-transition: all ease-out 1s;
 	    -moz-transition: all ease-out 1s;
 	    -o-transition: all ease-out 1s;
 	    transition: all ease-out 1s;
+
+		/*-webkit-filter: blur(2px);
+  		filter: blur(2px);		*/
+
+	    &.moveBG {
+	    	background-position: center 100px;
+	    	/*-webkit-filter: blur(5px);
+  			filter: blur(5px);*/
+	    }
+
+	    h2 {
+	    	float: left;
+	    }
 	}
-
-	.hsContainer {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		position: relative;
-
-		.hsContent {
-			max-width: 700px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-
-			h2 {
-				color: #fff8de;
-				background-color: rgba(0,0,0,0.5);
-				padding: 10px 5px;
-				font-size: 35px;
-				line-height: 38px;
-				margin-bottom: 12px;
-			}
-
-			p {
-				width: 400px;
-				color: #b2b2b2;
-			}
-
-			a {
-				color: #b2b2b2;
-				text-decoration: underline;
-			}
-		} /* .hsContent */
-	} /* .hsContainer */
 }
 
 #slide-1 {
 	height: 320px;
 	.bcg {
-		background-image:url('/img/bcg_slide-1.jpg');
-	}
+		position: relative;
 
-	.hsContent {
-		bottom: 200px;
-		top: auto;
-	}
+		&:before {
+			content:'';
+			display:block;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			height: 100%;
+			width: 100%;
+			background-image:url('/img/bcg_slide-1.jpg');
+			-webkit-filter: blur(5px);
+  			filter: blur(5px);
+		}		
+
+  		h2 {
+  			position: absolute;
+  			top:50%;
+  			left: 40%;
+  			margin:0;
+  			text-transform: capitalize;
+			color: #333;
+			letter-spacing: 4px;
+			font-size: 20px;
+			opacity:.8;	
+
+  			-webkit-filter: none;
+  			filter: none;  			
+  		}
+	}	
 }
 
 #slide-2 {
 	height: 750px;
 	background-color: #dedede;
-
-	/*.bcg {
-		background-image:url('/img/bcg_slide-2.jpg');
-	}
-
-	.hsContent {
-		margin-left: -450px;
-		bottom: 200px;
-		top: auto;
-	}*/
 }
 
 #slide-3 {
-	height: 750px;
-	background-color: #333;
-	/*.bcg {
-		background-image:url('/img/bcg_slide-3.jpg');
-	}
-
-	.hsContent {
-		margin-left: -239px;
-	}
-
-	h2 {
-		color: #f2ead6;
-		background-color: rgba(0,0,0,0.6);
-	}*/
+	height: auto;
+	background-color: #333;	
 }
 
 #slide-4 {
 	height: 750px;
-	background-color: #3c3c3c;
-	/*.bcg {
-		background-image:url('/img/bcg_slide-3.jpg');
-	}
-
-	.hsContent {
-		margin-left: -450px;
-	}
-
-	h2 {
-		background: none;
-		padding-left: 0;
-		padding-right: 0;
-	}*/
+	background-color: #3c3c3c;	
 }
 
 #slide-5 {
 	.bcg {
 		background-image:url('/img/bcg_slide-3.jpg');
-	}
-
-	.hsContent {
-		margin-left: -450px;
-	}
-
-	h2 {
-		color:black;
-		opacity: 1;
-		padding-left: 0;
-		padding-right: 0;
-	}
+	}	
 }
 
 /* SLIDE MODULE */
 
 
 .cbp-so-scroller {
-	margin-top: 3em;
 	overflow: hidden;
 	background-color:white;
 }
 
 .cbp-so-section {
-	margin-bottom: 15em;
 	position: relative;
 
 	&:before,&:after {
@@ -207,28 +153,6 @@ main {
 		font-size: 18px;
 		font-weight: 300;
 	}
-
-
-	/*.cbp-so-side-left,
-	.cbp-so-side-right {
-		-webkit-transform: translateX(0px);
-		-moz-transform: translateX(0px);
-		transform: translateX(0px);
-		opacity: 1;
-	}*/
-
-	.cbp-so-side-left {
-		-webkit-transform: translateX(-515px);
-		-moz-transform: translateX(-515px);
-		transform: translateX(-515px);
-	}
-
-	.cbp-so-side-right {
-		-webkit-transform: translateX(515px);
-		-moz-transform: translateX(515px);
-		transform: translateX(515px);
-	}
-
 
 }
 
@@ -257,6 +181,7 @@ main {
 		text-align: left;
 		img {
 			float: left;
+			width: 500px;
 		}
 	}
 
@@ -264,6 +189,7 @@ main {
 		text-align: right;
 		img {
 			float:right;
+			width: 500px;
 		}
 	}
 }
@@ -276,18 +202,6 @@ main {
 	    -moz-transition: none;
 	    transition: none;
 	}
-
-	/*.cbp-so-side-left {
-		-webkit-transform: translateX(-160px);
-		-moz-transform: translateX(-160px);
-		transform: translateX(-160px);
-	}
-
-	.cbp-so-side-right {
-		-webkit-transform: translateX(160px);
-		-moz-transform: translateX(160px);
-		transform: translateX(160px);
-	}*/
 
 	.cbp-so-side-left,
 	.cbp-so-side-right {
