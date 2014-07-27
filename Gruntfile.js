@@ -65,7 +65,7 @@ module.exports = function(grunt) {
       defaults: {
         options: {
 	        port: 1818,
-	        hostname: 'localhost',
+	        hostname: 'fy',
 	        bases: 'public'
 	    }
       }
@@ -104,6 +104,10 @@ module.exports = function(grunt) {
           jQuery: true,
           console: true,
           module: true,
+          setTimeout: true,
+          setInterval: true,
+          Modernizr: true,
+          clearTimeout: true,
           document: true
         }
       }

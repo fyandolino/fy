@@ -1,7 +1,7 @@
 var fy = $;
 
 (function ($) {
-    /* global window, skrollr, setTimeout, setInterval, console, Modernizr, clearTimeout */
+    /* global window, setTimeout, setInterval, console, Modernizr, clearTimeout */
 
     /**
     Boilerplate Object reference for Samsung project.
@@ -17,7 +17,7 @@ var fy = $;
             **/
             var didScroll = false,
                 changeHeaderOn = 300,
-                getPos = $('.cbp-so-scroller').position().top;   
+                getPos = $('.ct-slide').position().top;   
 
             /**
             Initializaiton function which runs at object instantiation time.
@@ -32,7 +32,7 @@ var fy = $;
             function bindEvents() {
 
                 // the element to act on if viewable
-                var myelement = $('.cbp-so-section'),
+                var myelement = $('.slide-out-cc'),
                     elementWidth = myelement.width() / 2;
 
                 $(window).scroll(function(){
@@ -47,10 +47,10 @@ var fy = $;
                 $('nav a').on('click', function(e) {
                     e.preventDefault();
                     var target = $(this).data('jump');
-                    if (target === 'slide-1') {
+                    if (target === 'intro') {
                         fy.scrollTo($('header'));
                     } else {
-                        fy.scrollTo(  $('#'+target+''), $('#'+target+'').offset().top-$('.cbp-af-header').outerHeight() );
+                        fy.scrollTo(  $('.'+target+''), $('.'+target+'').offset().top-$('.header-cc').outerHeight() );
                     }                    
                 });
             }
@@ -74,7 +74,7 @@ var fy = $;
 
                 // the element to act on if viewable
                 var imgElem = $('.hdr-cc'),
-                    slideElem = $('.cbp-so-section'),
+                    slideElem = $('.slide-out-cc'),
                     elementWidth = slideElem.width() / 2;
 
                 if(!getViewportH(slideElem)) {                       
@@ -106,15 +106,15 @@ var fy = $;
 
             function scrollPage() {
                 var sy = scrollY(),
-                    headerContainer = $('.cbp-af-header'),
+                    headerContainer = $('.header-cc'),
                     getHeight = headerContainer.height(),
                     scrolledPast = false;
 
                 if (sy >= changeHeaderOn) {                    
-                    headerContainer.addClass('cbp-af-header-shrink');  
+                    headerContainer.addClass('header-cc-shrink');  
                     navHeight();
                 } else {                    
-                    headerContainer.removeClass('cbp-af-header-shrink');        
+                    headerContainer.removeClass('header-cc-shrink');        
                     navHeight();  
                 }
 
@@ -137,7 +137,7 @@ var fy = $;
             function navHeight() {
 
                 setTimeout(function() {
-                    var getHeight = $('.cbp-af-header').height();
+                    var getHeight = $('.header-cc').height();
                     $('header').height(getHeight);
                  }, 300);                
             }

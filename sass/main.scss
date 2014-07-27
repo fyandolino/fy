@@ -1,5 +1,6 @@
 @import "base/_variables.scss";
 @import "base/_mixins.scss";
+@import "base/_fonts.scss";
 @import "base/_global.scss";
 @import "base/_layout.scss";
 @import "base/_nav.scss";
@@ -38,7 +39,7 @@ main {
 
 }
 
-.homeSlide {
+.section-cc {
 	height: 550px;
 	.bcg {
 		background-position: center center;
@@ -52,23 +53,34 @@ main {
 	    -o-transition: all ease-out 1s;
 	    transition: all ease-out 1s;
 
-		/*-webkit-filter: blur(2px);
-  		filter: blur(2px);		*/
-
 	    &.moveBG {
-	    	background-position: center 100px;
-	    	/*-webkit-filter: blur(5px);
-  			filter: blur(5px);*/
+	    	//background-position: center 100px;
 	    }
 
 	    h2 {
 	    	float: left;
 	    }
 	}
+	h2 {
+		margin: 0;
+	}
 }
 
-#slide-1 {
-	height: 320px;
+@-webkit-keyframes imgAnim {
+	0% {
+		-webkit-filter: saturate(1);
+		filter: saturate(1);
+	}
+	100% {
+		-webkit-filter: saturate(9);
+		filter: saturate(9);
+	}
+}
+
+
+.intro {
+	height: 320px;	
+
 	.bcg {
 		position: relative;
 
@@ -82,9 +94,27 @@ main {
 			height: 100%;
 			width: 100%;
 			background-image:url('/img/bcg_slide-1.jpg');
-			-webkit-filter: blur(5px);
-  			filter: blur(5px);
-		}		
+			-webkit-transition: all ease-out 1s;
+		    -moz-transition: all ease-out 1s;
+		    -o-transition: all ease-out 1s;
+		    transition: all ease-out 1s;
+			-webkit-filter: grayscale(0.7);
+  			filter: grayscale(0.7);
+		}	
+
+		&:hover {
+
+			&:before {
+				-webkit-animation-name: imgAnim;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: 5;
+				-webkit-animation-direction: alternate;
+				-webkit-animation-timing-function: ease-out;
+				-webkit-animation-fill-mode: forwards;
+				-webkit-animation-delay: 0s;
+	  		}
+
+		}	
 
   		h2 {
   			position: absolute;
@@ -103,22 +133,28 @@ main {
 	}	
 }
 
-#slide-2 {
+.about {
 	height: 750px;
 	background-color: #dedede;
 }
 
-#slide-3 {
+.work {
 	height: auto;
-	background-color: #333;	
+	background-color: #fefdfb;	
+	overflow: hidden;
 }
 
-#slide-4 {
+.more-me {
 	height: 750px;
 	background-color: #3c3c3c;	
 }
 
-#slide-5 {
+.contact {
+	height: 750px;
+	background-color: #dedede;	
+}
+
+.where {
 	.bcg {
 		background-image:url('/img/bcg_slide-3.jpg');
 	}	
@@ -127,12 +163,12 @@ main {
 /* SLIDE MODULE */
 
 
-.cbp-so-scroller {
-	overflow: hidden;
+.ct-slide {
+	
 	background-color:white;
 }
 
-.cbp-so-section {
+.slide-out-cc {
 	position: relative;
 
 	&:before,&:after {
