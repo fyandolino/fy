@@ -90,14 +90,14 @@ var fy = $;
                     if (target === 'intro') {
                         fy.scrollTo($('header'));
                     } else {
-                        fy.scrollTo(  $('.'+target+''), $('.'+target+'').offset().top-$('.header-cc').outerHeight() );
+                        fy.scrollTo(  $('.'+target+''), $('.'+target+'').offset().top-$('.header-cc').outerHeight() + 20 +'px' );
                     }                    
                 });
             }
 
             function displayTitle() {
 
-                var titles = ['creative developer', 'front-end designer','ux developer', 'front-end artist', 'code poet'];
+                var titles = ['creative developer', 'front-end designer','UX developer', 'front-end artist', 'code poet'];
 
                 $('.title').html(titles[0]);
 
