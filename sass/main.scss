@@ -43,6 +43,9 @@ main {
 	height: auto;
 	width: 100%;
 	float: left;
+	display: block;
+	@include clearfix;
+
 	.bcg {
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -192,6 +195,7 @@ main {
 		font-size: 36px;
 		padding: 35px;
 		text-transform: uppercase;
+		text-align: center;
 	}
 
 	.clients {
@@ -200,7 +204,7 @@ main {
 
 		ul {
 			list-style: none;
-			width: 80%;
+			width: 100%;
 			margin: auto;
 			height: 240px;
 			padding: 0;
@@ -209,6 +213,7 @@ main {
 				height: 120px;
 				margin: 0 auto;
 				display: inline;
+				float: left;
 
 				img {
 					padding:20px;
@@ -220,7 +225,7 @@ main {
 }
 
 .expertises {
-	height: 245px;
+	height:auto;
 	background-color: #333;
 	float: left;	
 	width: 100%;
@@ -229,19 +234,24 @@ main {
 	h2 {
 		text-align: center;
 		text-transform: uppercase;
-		margin: 80px 0 40px 0;
+		margin: 40px 0;
 	}
+
+	.center-list {
+		display: table;   /* Allow the centering to work */
+		margin: 0 auto;
+	}
+
 
 	ul {	
 		list-style: none;
-		width: 80%;
+		min-width: 696px;
 		margin: auto;
 		height: auto;
-		padding: 0;
+		padding: 0 0 40px 0;
 
 		li {
-			height: 120px;
-			margin: 0 auto;
+			height: 120px;			
 			display: inline;
 			padding-left: 20px;
 			color: #777;
@@ -334,7 +344,7 @@ main {
 
 	&.cbp-so-side-right {
 		text-align: left;
-		padding-right:130px;
+		padding-right:0px;
 
 		-webkit-transition-delay: 0.2s;
 	    -moz-transition-delay: 0.2s;
@@ -349,7 +359,7 @@ main {
 
 	&.cbp-so-side-left {
 		text-align: right;
-		padding-left:130px;
+		padding-left:0px;
 
 		img {
 			float:left;

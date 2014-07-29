@@ -41,6 +41,7 @@ var fy = $;
                        
                         scrollPage(); 
                         elemAnimate();
+                        counter();
                     }                    
                 });
 
@@ -155,6 +156,21 @@ var fy = $;
 
                 return ( elemTop <= docViewBottom - ($(elem).height() * 0.9)) && (elemTop > docViewTop - ($(elem).height() * 0.9) );
             
+             }
+
+             function counter() {
+                var moreMe = $('.more-me');
+
+                if(!getViewportH(moreMe)) { 
+
+                    var i = 0;
+                    setInterval(function(){
+                        i++;
+                        if(i <= 10) {                         
+                            $('.counter').hide().html(i).fadeIn();     
+                        }
+                    },800);
+                }
              }
         
             init();
