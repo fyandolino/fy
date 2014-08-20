@@ -11,7 +11,9 @@ module.exports = function(grunt) {
 
     	libraries: {
 			src: [
-				'public/js/lib/jquery.min.js'
+				'public/js/lib/jquery.min.js',
+				'public/js/lib/jquery.inview.min.js',
+				'public/js/lib/waypoints.min.js'
 				
 				/* DO NOT CONCATENATE MINIFIED FILES */
 				//'!js/src/*.min.js'			
@@ -66,9 +68,10 @@ module.exports = function(grunt) {
         options: {
 	        port: 1818,
 	        hostname: 'fy',
-	        bases: 'public'
+	        bases: 'public',
+	        livereload: true
 	    }
-      }
+      },
     },
 
     uglify: {
@@ -115,6 +118,7 @@ module.exports = function(grunt) {
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'concat', 'uglify'],
+      options: { livereload: true },
       sass: {
 	    files: 'sass/{,*/}*.{scss,sass}',
 	    tasks: ['sass:dev','concat:css']
