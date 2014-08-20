@@ -19,7 +19,8 @@
 }
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px;
+    font-family: 'Lato', sans-serif;
     height: 100%;
 	min-height: 100%;
 	background-color: #000000;
@@ -27,6 +28,13 @@ body {
 
 section {
 	//min-width: 960px;	
+
+	h2 {
+		font-size: 30px;
+		line-height: 42px;
+		text-transform: uppercase;
+		text-align: center;
+	}
 }
 
 main {
@@ -37,6 +45,11 @@ main {
     -o-transition: all ease-out 1s;
     transition: all ease-out 1s;
 
+}
+
+.center-list {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
 }
 
 .section-cc {
@@ -60,10 +73,6 @@ main {
 
 	    &.moveBG {
 	    	//background-position: center 100px;
-	    }
-
-	    h2 {
-	    	float: left;
 	    }
 	}
 
@@ -237,12 +246,6 @@ main {
 		margin: 40px 0;
 	}
 
-	.center-list {
-		display: table;   /* Allow the centering to work */
-		margin: 0 auto;
-	}
-
-
 	ul {	
 		list-style: none;
 		min-width: 696px;
@@ -277,11 +280,54 @@ main {
 		width: 0;
 	}
 
+	h2 {
+		margin-bottom: 45px;
+		font-weight: 300;
+	}
+	
+	.col {
+		width: 33%;
+		float: left;
+		p {
+			display: table;   /* Allow the centering to work */
+			margin: 0 auto;
+			font-weight: 300;
+			text-align: center;
+			color:#777;
+			span {
+				font-size: 60px;
+				line-height: 45px;
+				@include clearfix;
+			}
+		}			
+	}
+
 }
 
 .contact {
 	height: 750px;
 	background-color: #dedede;	
+	.inner {
+		p {
+			text-align: center;
+		}
+
+		ul {
+			list-style: none;
+			li {
+				float: left;
+				a {
+					text-decoration: none;
+					&[class^="icon-"], [class*=" icon-"] {
+						font-size: 65px;
+						padding:25px;
+					}
+				}
+				
+			}
+		}
+
+	}
 }
 
 .where {
@@ -318,11 +364,10 @@ main {
 		font-weight: 300;
 		text-align: left;
 	}
-
 }
 
 /* Sides */
-.cbp-so-side {
+.slide-out {
 	width: 50%;
 	float: left;
 	margin: 0;
@@ -342,7 +387,7 @@ main {
 		clear:both;
 	}
 
-	&.cbp-so-side-right {
+	&.slide-side-right {
 		text-align: left;
 		padding-right:0px;
 
@@ -357,7 +402,7 @@ main {
 		}
 	}
 
-	&.cbp-so-side-left {
+	&.slide-side-left {
 		text-align: right;
 		padding-left:0px;
 
@@ -371,15 +416,15 @@ main {
 
 /* Initial state (hidden or anything else) */
 .cbp-so-init {
-	&.cbp-so-side {
+	&.slide-out {
 		opacity: 0;
 		-webkit-transition: none;
 	    -moz-transition: none;
 	    transition: none;
 	}
 
-	.cbp-so-side-left,
-	.cbp-so-side-right {
+	.slide-side-left,
+	.slide-side-right {
 		-webkit-transform: translateX(0px);
 		-moz-transform: translateX(0px);
 		transform: translateX(0px);

@@ -83,6 +83,7 @@ header {
         font-size: 18px;
         text-decoration: none;
         text-transform: uppercase;
+        float: left;
 
         @media screen and (min-width: $tablet-break) {
           margin: 0 0 0 20px;
@@ -96,6 +97,10 @@ header {
 
         &:hover {
           color:#ccc;
+        }
+
+        &.active {
+          font-weight: bold;
         }
       }
 

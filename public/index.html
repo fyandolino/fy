@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<!-- Global Styles -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/css/combined/all.css">
 		<title>fy</title>
 	</head>
@@ -19,9 +20,9 @@
 	    <header>			
 			<div class="header-cc">
 			    <div class="header-inner">
-			        <h1>Yandolino</h1>
+			        <h1><!-- Yandolino --></h1>
 			        <nav>
-			            <a href="javascript:void(0);" data-jump="intro" class="icon-arrow-up"></a>
+			            <a href="javascript:void(0);" data-jump="intro" class="icon-arrow-up"><span>up</span></a>
 			            <a href="javascript:void(0);" data-jump="about">about</a>
 			            <a href="javascript:void(0);" data-jump="work">work</a>
 			            <a href="javascript:void(0);" data-jump="more-me">more me</a>
@@ -30,7 +31,6 @@
 			    </div>
 			</div>
 		</header>
-
        	<main>
 	        <section class="section-cc intro">
 			    <div class="hdr-cc bcg">			        
@@ -38,7 +38,7 @@
 			    </div>
 			</section>
 		    
-		    <section class="section-cc about">	
+		    <section class="section-cc about" data-section="about">	
 		    	<div class="container">
 			    	<div class="inner">
 				    	<div class="img-cc">
@@ -51,25 +51,25 @@
 				</div>		    
 			</section>
 		    
-			<section class="section-cc work">
+			<section class="section-cc work" data-section="work">
 				<div class="container">
 					<div class="ct-slide inner"> 
 						<h2>My Recent Work</h2>
 					    <section class="slide-out-cc">
-					        <article class="cbp-so-side cbp-so-side-left">
+					        <article class="slide-out slide-side-left">
 					            <h3>Samsung</h3>
 					            <p>Worked on building a new, highly creative responsive site for Samsung, used to promote their latest products. Technologies used: HTML5, JavaScript, CSS3, SASS, compass, Modernizr, Grunt, Susy, Git/Mercurial, jQuery, ADA, and W3C compliance.</p>
 					        </article>
-					        <figure class="cbp-so-side cbp-so-side-right">
+					        <figure class="slide-out slide-side-right">
 					            <img src="img/samsung.jpg" alt="img01">
 					        </figure>
 					    </section>
 					 
 					    <section class="slide-out-cc">
-					        <figure class="cbp-so-side cbp-so-side-left">
+					        <figure class="slide-out slide-side-left">
 					            <img src="img/soulcycle.jpg" alt="img01">
 					        </figure>
-					        <article class="cbp-so-side cbp-so-side-right">
+					        <article class="slide-out slide-side-right">
 					            <h3>Soul-Cycle</h3>
 					            <p>Assisted development team with implementation of UX enhancements and site functionality. Technolgies used: HTML5, JavaScript, CSS3, LESS, jQuery, Twig, PHP, Modernizr and Grunt.</p>
 					        </article>
@@ -77,15 +77,17 @@
 					    <section class="clients">
 					    	<div class="inner">
 						    	<h2>Clients</h2>
-						    	<ul>
-						    		<li><img src="img/logos/samsung.jpg" alt="Samsung"></li>
-						    		<li><img src="img/logos/nike.jpg" alt="Nike"></li>
-						    		<li><img src="img/logos/verizon.jpg" alt="Verizon"></li>
-						    		<li><img src="img/logos/loreal.jpg" alt="LOREAL"></li>
-						    		<li><img src="img/logos/converse.jpg" alt="Converse"></li>
-						    		<li><img src="img/logos/aol.jpg" alt="AOL"></li>
-						    		<li><img src="img/logos/soulcycle.jpg" alt="Soul-Cycle"></li>
-						    	</ul>	
+						    	<div class="center-list">						    	
+							    	<ul>
+							    		<li><img src="img/logos/samsung.jpg" alt="Samsung"></li>
+							    		<li><img src="img/logos/nike.jpg" alt="Nike"></li>
+							    		<li><img src="img/logos/verizon.jpg" alt="Verizon"></li>
+							    		<li><img src="img/logos/loreal.jpg" alt="LOREAL"></li>
+							    		<li><img src="img/logos/converse.jpg" alt="Converse"></li>
+							    		<li><img src="img/logos/aol.jpg" alt="AOL"></li>
+							    		<li><img src="img/logos/soulcycle.jpg" alt="Soul-Cycle"></li>
+							    	</ul>	
+						    	</div>
 						    </div>			    				    	
 					    </section>
 					</div>
@@ -110,16 +112,25 @@
 				    </div>
 				</div>		    
 		    </section>
-			<section class="section-cc more-me">
+			<section class="section-cc more-me" data-section="more-me">
 				<div class="container">
 					<div class="inner">
 						<h2>more about me</h2>		
+						
+						<div class="col">
+							<p><span>10+</span> years experience</p>
+						</div>
+						<div class="col">
+							<p><span>100%</span> dedication</p>
+						</div>
+						<div class="col">
+							<p><span>11</span> Countries I've Visited</p>
+						</div>		
+						
+						
 
-						<p>experience</p>
-						<p>dedication</p>
-						<p>travel</p>
+						<!-- <div class="counter">0</div> -->
 
-						<div class="counter">0</div>
 
 
 						<!-- <div class="mini-statistics row text-center">
@@ -143,15 +154,29 @@
 				</div>		   
 			</section>
 
-			<section class="section-cc contact">
+			<section class="section-cc contact" data-section="contact">
 				<div class="container">
 					<div class="inner">
-						<h2>contact</h2>		    
+						<h2>contact</h2>	
+						<p>Get in touch</p>	    
+						
+						<div class="center-list">
+							<ul>
+								<li><a href="" class="icon-mail"><span>email</span></a></li>
+								<li><a href="" class="icon-googleplus"><span>google plus</span></a></li>
+								<li><a href="" class="icon-facebook"><span>facebook</span></a></li>
+								<li><a href="" class="icon-instagram"><span>instagram</span></a></li>
+								<li><a href="" class="icon-twitter"><span>twitter</span></a></li>
+								<li><a href="" class="icon-github"><span>github</span></a></li>
+							</ul>
+							
+						</div>
+
 				   </div>
 				</div>
 			</section>
 
-			<section class="section-cc where">
+			<section class="section-cc where" data-section="where">
 			    <div class="bcg">
 	                <h2>where</h2>
 			    </div>
