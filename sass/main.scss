@@ -213,16 +213,16 @@ main {
 
 		ul {
 			list-style: none;
-			width: 100%;
-			margin: auto;
-			height: 240px;
 			padding: 0;
+			text-align: center;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
 
 			li {
-				height: 120px;
-				margin: 0 auto;
-				display: inline;
-				float: left;
+				height: 120px;		
+				width: 240px;		
+				display: inline;				
 
 				img {
 					padding:20px;
@@ -305,11 +305,17 @@ main {
 }
 
 .contact {
-	height: 750px;
+	height: 560px;
 	background-color: #dedede;	
+	
 	.inner {
+		margin-top: 100px;
 		p {
 			text-align: center;
+		}
+
+		.center-list {
+			margin-top: 60px;
 		}
 
 		ul {
@@ -317,10 +323,18 @@ main {
 			li {
 				float: left;
 				a {
+					color: black;
 					text-decoration: none;
+					-webkit-transition: all ease-out 0.5s;
+				    -moz-transition: all ease-out 0.5s;
+				    -o-transition: all ease-out 0.5s;
+				    transition: all ease-out 0.5s;
 					&[class^="icon-"], [class*=" icon-"] {
 						font-size: 65px;
 						padding:25px;
+					}
+					&:hover {
+						color: #777;
 					}
 				}
 				
@@ -331,10 +345,105 @@ main {
 }
 
 .where {
-	height: 550px;
-	.bcg {
-		background-image:url('/img/bcg_slide-3.jpg');
-	}	
+	height: 1000px;
+	position: relative;
+	overflow: hidden;
+	&:after {
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid #dedede;
+		top: 0;
+		content: '';
+		height: 0;
+		left: 50%;
+		margin-left: -20px;
+		position: absolute;
+		width: 0;
+	}
+
+	.container {
+		width:100%;
+	}
+
+	.cb-slideshow {
+		position: relative;
+	    width: 100%;
+	    height: 100%;
+	    top: 0px;
+	    left: 0px;
+	    z-index: 0; 
+
+		li {
+			span {
+				width: 100%;
+			    height: 100%;
+			    position: absolute;
+			    top: 0px;
+			    left: 0px;
+			    color: transparent;
+			    background-size: cover;
+			    background-position: 50% 50%;
+			    background-repeat: none;
+			    opacity: 0;
+			    z-index: 0;
+			    -webkit-animation-name: imageAnimation;
+			    -webkit-animation-duration: 12s;
+			    -webkit-animation-iteration-count: infinite;
+				//-webkit-animation-direction: alternate;
+				//-webkit-animation-timing-function: ease-out;
+				//-webkit-animation-fill-mode: forwards;
+				//-webkit-animation-delay: 2s;
+
+
+			    -webkit-transition: none;
+			    -moz-transition: none;
+			    -o-transition: none;
+			    transition: none;		    
+			}	
+
+		&:nth-child(1) { 
+			span {
+				background-image: url(/img/map/z4.jpg); 
+			}		    
+		}
+
+		&:nth-child(2) { 
+			span {
+				background-image: url(/img/map/z3.jpg); 
+		    	-webkit-animation-delay: 2s; 
+			}		    
+		}
+
+		&:nth-child(3) { 
+			span {
+				background-image: url(/img/map/z2.jpg); 
+		    	-webkit-animation-delay: 4s; 
+			}		    
+		}
+
+		&:nth-child(4) { 
+			span {
+				background-image: url(/img/map/z1.jpg); 
+		    	-webkit-animation-delay: 6s; 
+			}		    
+		}
+
+		}
+	}
+}
+
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    17% { 
+    	opacity: 1;
+    	-webkit-transform: scale(2.1);
+    }
+    25% { 
+    	opacity: 0;
+    	-webkit-transform: scale(2.1);
+    }
+    100% { opacity: 0; }
 }
 
 /* SLIDE MODULE */
