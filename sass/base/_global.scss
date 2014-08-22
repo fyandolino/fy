@@ -29,3 +29,12 @@
 	padding: 35px;
 	width: 100%;
 }
+
+hr {
+    border: 0;
+    height: 4px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), #dedede, rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), #dedede, rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), #dedede, rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), #dedede, rgba(0,0,0,0)); 
+}
