@@ -278,6 +278,7 @@ header:after {
   position: relative;
   top: 3px;
   font-size: 22px;
+  opacity: 0;
 }
 .header-cc nav a:hover {
   color: #ccc;
@@ -291,6 +292,10 @@ header:after {
 .header-cc.header-cc-shrink h1,
 .header-cc.header-cc-shrink nav a {
   line-height: 90px;
+}
+.header-cc.header-cc-shrink h1.icon-arrow-up,
+.header-cc.header-cc-shrink nav a.icon-arrow-up {
+  opacity: 1;
 }
 .header-cc.header-cc-shrink h1 {
   font-size: 2em;
@@ -435,7 +440,7 @@ main:after {
   background-color: #dedede;
 }
 .about .inner {
-  padding: 130px;
+  padding: 60px 130px;
   margin: auto;
 }
 .about .inner .img-cc {
@@ -557,25 +562,81 @@ main:after {
 .more-me .col {
   width: 33%;
   float: left;
+  border-right: 1px solid #494949;
 }
 .more-me .col p {
   display: table;
   /* Allow the centering to work */
   margin: 0 auto;
   font-weight: 300;
+  text-transform: capitalize;
   text-align: center;
   color: #777;
 }
 .more-me .col p span {
   font-size: 60px;
-  line-height: 45px;
+  margin-bottom: 15px;
 }
 .more-me .col p span:after {
   content: "";
   display: table;
   clear: both;
 }
-.more-me .col p .after {
+.more-me .col p a {
+  color: #777;
+  text-decoration: none;
+}
+.more-me .col:last-child {
+  border-right: none;
+}
+.more-me .bg-circle {
+  background: #333;
+  border: 1px dashed #555;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  color: #1bd3df;
+  display: block;
+  font-size: 60px;
+  line-height: 140px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+}
+.more-me .bg-square {
+  background: #333;
+  border: 1px dashed #555;
+  color: #1bd3df;
+  display: block;
+  font-size: 60px;
+  line-height: 140px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  width: 170px;
+  height: 140px;
+}
+.more-me .me-content {
+  background: #dedede;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.more-me .me-content .slide-1 h3 {
+  float: left;
+}
+.more-me .me-content .slide-1 h3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.more-me .me-content .slide-1 img {
+  margin: 18px 0 0 15px;
+}
+.more-me .me-content .slide-1 .copy {
   float: left;
 }
 

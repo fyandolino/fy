@@ -205,9 +205,9 @@ var fy = $;
                         );
                     });       
 
-                    $('.more-me').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
-                        counter();
-                    });       
+                    // $('.more-me').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
+                    //     counter();
+                    // });       
 
                 if(!getViewportH(imgElem)) { 
                     imgElem.addClass('moveBG');  
@@ -290,7 +290,7 @@ var fy = $;
             
              }
 
-             function counter() {
+             /*function counter() {
                 var moreMe = $('.more-me'),
                     from = $('.counter').data('from'),
                     to = $('.counter').data('to');
@@ -303,7 +303,7 @@ var fy = $;
                     }
                 },450);
 
-             }
+             }*/
         
             init();
     };

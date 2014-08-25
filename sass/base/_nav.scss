@@ -93,6 +93,7 @@ header {
           position: relative;
           top: 3px;
           font-size: 22px;
+          opacity: 0;
         }
 
         &:hover {
@@ -110,6 +111,9 @@ header {
           h1,
           nav a {
             line-height: 90px;
+            &.icon-arrow-up {
+              opacity: 1;
+            }
           }
 
           h1 {

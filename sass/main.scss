@@ -152,7 +152,7 @@ main {
 	background-color: #dedede;
 
 	.inner {
-		padding: 130px;
+		padding: 60px 130px;
 		margin: auto;
 		
 		.img-cc {
@@ -288,23 +288,83 @@ main {
 	.col {
 		width: 33%;
 		float: left;
+		border-right: 1px solid #494949;
 		p {
 			display: table;   /* Allow the centering to work */
 			margin: 0 auto;
 			font-weight: 300;
+			text-transform: capitalize;
 			text-align: center;
 			color:#777;
 			span {
 				font-size: 60px;
-				line-height: 45px;
+				//line-height: 45px;
+				margin-bottom: 15px;
 				@include clearfix;
 			}
-			.after {
-				float: left;
+			a {
+				color:#777;
+				text-decoration: none;
 			}
-		}			
+
+		}
+	&:last-child {
+		border-right: none;
+	}	
+
+	}
+	.bg-circle {
+		background: #333;
+		border: 1px dashed #555;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		color: #1bd3df;
+		display: block;
+		font-size: 60px;
+		line-height: 140px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: center;
+		width: 140px;
+		height: 140px;
+	}
+	.bg-square {
+		background: #333;
+		border: 1px dashed #555;		
+		color: #1bd3df;
+		display: block;
+		font-size: 60px;
+		line-height: 140px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: center;
+		width: 170px;
+		height: 140px;
 	}
 
+	.me-content {
+		background: #dedede;
+		padding:20px;
+		width:100%;
+		height:100%;
+		float: left;
+		
+		.slide-1 {
+			h3 {
+				float: left;
+				@include clearfix;
+			}
+			img {
+				margin:18px 0 0 15px;
+			}
+			.copy{
+				float: left;
+			}
+
+		}
+
+	}
 }
 
 .contact {
