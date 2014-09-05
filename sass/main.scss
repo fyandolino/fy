@@ -280,6 +280,8 @@ main {
 		width: 0;
 	}
 
+	.padbtm { padding-bottom:10px;}
+
 	h2 {
 		margin-bottom: 45px;
 		font-weight: 300;
@@ -344,11 +346,49 @@ main {
 	}
 
 	.me-content {
+		position: relative;
 		background: #dedede;
 		padding:20px;
 		width:100%;
 		height:100%;
 		float: left;
+		border-radius: 5px;		
+		
+		.arrow-up {
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-bottom: 20px solid #dedede;
+			top: -20px;
+			content: '';
+			height: 0;
+			left: 16%;
+			margin-left: -20px;
+			position: absolute;
+			width: 0;
+			-webkit-transition: all ease-out 0.5s;
+		    -moz-transition: all ease-out 0.5s;
+		    -o-transition: all ease-out 0.5s;
+		    transition: all ease-out 0.5s;
+		}
+
+		.slide-cc {
+			overflow: hidden;
+		}
+
+		.slide-content {
+			position: relative;
+			width:3210px;
+			-webkit-transition: all ease-out 0.5s;
+		    -moz-transition: all ease-out 0.5s;
+		    -o-transition: all ease-out 0.5s;
+		    transition: all ease-out 0.5s;
+		}
+
+		.slide-1,.slide-2,.slide-4 {
+			float: left;
+			width: 1050px;
+			padding-right: 30px;
+		}
 		
 		.slide-1 {
 			h3 {
@@ -708,4 +748,10 @@ main {
 		opacity: 1;
 	}
 
+}
+
+
+#map-canvas {
+	width: 1030px;
+	height: 710px;
 }

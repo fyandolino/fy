@@ -385,6 +385,7 @@ main:after {
     -webkit-filter: saturate(1);
     filter: saturate(1);
   }
+
   100% {
     -webkit-filter: saturate(9);
     filter: saturate(9);
@@ -555,6 +556,9 @@ main:after {
   position: absolute;
   width: 0;
 }
+.more-me .padbtm {
+  padding-bottom: 10px;
+}
 .more-me h2 {
   margin-bottom: 45px;
   font-weight: 300;
@@ -619,11 +623,45 @@ main:after {
   height: 140px;
 }
 .more-me .me-content {
+  position: relative;
   background: #dedede;
   padding: 20px;
   width: 100%;
   height: 100%;
   float: left;
+  border-radius: 5px;
+}
+.more-me .me-content .arrow-up {
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #dedede;
+  top: -20px;
+  content: '';
+  height: 0;
+  left: 16%;
+  margin-left: -20px;
+  position: absolute;
+  width: 0;
+  -webkit-transition: all ease-out 0.5s;
+  -moz-transition: all ease-out 0.5s;
+  -o-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+}
+.more-me .me-content .slide-cc {
+  overflow: hidden;
+}
+.more-me .me-content .slide-content {
+  position: relative;
+  width: 3210px;
+  -webkit-transition: all ease-out 0.5s;
+  -moz-transition: all ease-out 0.5s;
+  -o-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+}
+.more-me .me-content .slide-1, .more-me .me-content .slide-2, .more-me .me-content .slide-4 {
+  float: left;
+  width: 1050px;
+  padding-right: 30px;
 }
 .more-me .me-content .slide-1 h3 {
   float: left;
@@ -783,10 +821,12 @@ main:after {
   0% {
     opacity: 0;
   }
+
   25% {
     opacity: 1;
     -webkit-transform: scale(1.1);
   }
+
   50% {
     opacity: 1;
     -webkit-transform: scale(1.1);
@@ -796,14 +836,17 @@ main:after {
   0% {
     opacity: 0;
   }
+
   25% {
     opacity: 1;
     -webkit-transform: scale(1.1);
   }
+
   10% {
     opacity: 1;
     -webkit-transform: scale(1.1);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: scale(1.1);
@@ -814,18 +857,22 @@ main:after {
     -moz-transform: scale(0);
     opacity: 0.0;
   }
+
   25% {
     -moz-transform: scale(0);
     opacity: 0.1;
   }
+
   50% {
     -moz-transform: scale(0.1);
     opacity: 0.3;
   }
+
   75% {
     -moz-transform: scale(0.5);
     opacity: 0.5;
   }
+
   100% {
     -moz-transform: scale(1);
     opacity: 0.0;
@@ -836,18 +883,22 @@ main:after {
     -webkit-transform: scale(0);
     opacity: 0.0;
   }
+
   25% {
     -webkit-transform: scale(0);
     opacity: 0.1;
   }
+
   50% {
     -webkit-transform: scale(0.1);
     opacity: 0.3;
   }
+
   75% {
     -webkit-transform: scale(0.5);
     opacity: 0.5;
   }
+
   100% {
     -webkit-transform: scale(1);
     opacity: 0.0;
@@ -934,4 +985,7 @@ main:after {
   opacity: 1;
 }
 
-/*# sourceMappingURL=main.css.map */
+#map-canvas {
+  width: 1030px;
+  height: 710px;
+}

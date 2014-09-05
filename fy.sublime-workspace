@@ -32,35 +32,35 @@
 	"buffers":
 	[
 		{
-			"file": "public/index.html",
-			"settings":
-			{
-				"buffer_size": 3364,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "sass/main.scss",
 			"settings":
 			{
-				"buffer_size": 3353,
-				"line_ending": "Unix"
+				"buffer_size": 12229,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "sass/base/_nav.scss",
 			"settings":
 			{
-				"buffer_size": 2102,
-				"line_ending": "Unix"
+				"buffer_size": 2393,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "public/js/src/main.js",
 			"settings":
 			{
-				"buffer_size": 5782,
-				"line_ending": "Unix"
+				"buffer_size": 8076,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 5242,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -104,6 +104,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/franky/workspace/fy/index.html",
 		"/Users/fyandolino/Documents/Websites/fy/package.json",
 		"/Users/fyandolino/Documents/Websites/Samsung/tools/sass/pages/pdp-wow.scss",
 		"/Users/fyandolino/Documents/Websites/Samsung/common/js/src/pages/pdp-wow.js",
@@ -111,7 +112,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -161,53 +162,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3364,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								964,
-								964
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "sass/main.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3353,
+						"buffer_size": 12229,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2029,
-								2029
+								5363,
+								5363
 							]
 						],
 						"settings":
@@ -216,27 +188,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1498.0,
+						"translation.y": 6985.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "sass/base/_nav.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2102,
+						"buffer_size": 2393,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								149,
-								149
+								0,
+								0
 							]
 						],
 						"settings":
@@ -249,24 +221,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "public/js/src/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5782,
+						"buffer_size": 8076,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								462,
-								462
+								667,
+								667
 							]
 						],
 						"settings":
@@ -279,7 +251,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								354,
+								354
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 2310.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
