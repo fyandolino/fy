@@ -18,15 +18,17 @@ header {
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     transition: height 0.3s;
+    border-bottom: 1px solid #dedede;
 
       .header-inner {
         width:100%;
         max-width: 1130px;
         margin: 0 auto;
-        padding: 0 30px;
+        padding: 0 5px;        
 
         @media screen and (min-width: $tablet-break) {
           width: 90%;
+          padding: 0 30px;
         }       
         
       }
@@ -61,11 +63,12 @@ header {
         text-transform: uppercase;
         color: #333;
         letter-spacing: 2px;
-        font-size: 40px;
+        font-size: 35px;        
         margin: 0;
         float: none;
         @media screen and (min-width: $tablet-break) {
           float: left;
+          font-size: 40px;
         }  
       }
 
@@ -77,13 +80,17 @@ header {
       }
 
       nav a  {
-        color: #333;
-        font-weight: 300;
-        margin: 0 10px;
-        font-size: 18px;
-        text-decoration: none;
-        text-transform: uppercase;
-        float: left;
+          color: #333;
+          font-weight: 300;
+          text-decoration: none;
+          text-transform: uppercase;
+          float: left;
+          margin: 0 7px;
+          font-size: 12px;  
+        @media screen and (min-width: $tablet-break) {         
+          margin: 0 10px;
+          font-size: 18px;          
+        }
 
         @media screen and (min-width: $tablet-break) {
           margin: 0 0 0 20px;
@@ -91,9 +98,12 @@ header {
 
         &.icon-arrow-up {
           position: relative;
-          top: 3px;
+          top:0;
           font-size: 22px;
           opacity: 0;
+          @media screen and (min-width: $tablet-break) {
+            top: 3px;
+          }  
         }
 
         &:hover {
@@ -118,8 +128,10 @@ header {
 
           h1 {
             font-size: 2em;
+            display: none;
             @media screen and (min-width: $tablet-break) {
               font-size: 2em;
+              display: block;
             }
           }
       }

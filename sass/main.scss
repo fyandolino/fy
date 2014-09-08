@@ -30,10 +30,13 @@ section {
 	//min-width: 960px;	
 
 	h2 {
-		font-size: 30px;
+		font-size: 26px;		
 		line-height: 42px;
 		text-transform: uppercase;
 		text-align: center;
+		@media screen and (min-width: $tablet-landscape-break) {
+			font-size: 30px;
+		}
 	}
 }
 
@@ -94,7 +97,10 @@ main {
 
 
 .intro {
-	height: 320px;	
+	height: 150px;
+	@media screen and (min-width: $tablet-break) {
+		height: 320px;	
+	}
 
 	.bcg {
 		position: relative;
@@ -128,22 +134,31 @@ main {
 				-webkit-animation-fill-mode: forwards;
 				-webkit-animation-delay: 0s;
 	  		}
-
 		}	
 
   		h2 {
-  			position: absolute;
-  			top:50%;
-  			left: 40%;
+			position: absolute;
+  			top:35%;
+  			left: 20%;
   			margin:0;
   			text-transform: capitalize;
 			color: #333;
 			letter-spacing: 4px;
 			font-size: 20px;
 			opacity:.8;	
-
   			-webkit-filter: none;
-  			filter: none;  			
+  			filter: none; 
+  			width: 200px;
+  			line-height: 25px;
+
+  			@media screen and (min-width: $tablet-break) {
+  				left: 40%;
+  				top: 50%;
+  				width:250px;	          
+	        }
+	        @media screen and (min-width: $tablet-landscape-break) {
+  				width:300px;	          
+	        }
   		}
 	}	
 }
@@ -152,30 +167,53 @@ main {
 	background-color: #dedede;
 
 	.inner {
-		padding: 60px 130px;
-		margin: auto;
+		padding: 5px;
+		@media screen and (min-width: $tablet-break) {	
+			padding: 40px;		
+			margin: auto;
+		}
+
+		@media screen and (min-width: $tablet-landscape-break) {
+	        padding: 60px 130px;
+        }
 		
 		.img-cc {
-			float: left;
-			width: 190px;
-			margin-right: 50px;
+			width: 100px;
+			margin: auto;
+			
+			@media screen and (min-width: $tablet-break) {
+				width: 190px;
+				margin-right: 50px;
+				float: left;
+			}
 			img {
 				border: 10px solid #494949;
 				-moz-border-radius: 50%;
 				-webkit-border-radius: 50%;
 				border-radius: 50%;
-				height: 190px;
-				margin: 20px 0;
+				height: 100px;
+				margin: 15px 0 0 0;
 				-webkit-filter: grayscale(0.7);
   				filter: grayscale(0.7);
+				@media screen and (min-width: $tablet-break) {
+					height: 190px;
+					margin: 20px 0;
+				}
+				
 			}
 		}
 
 		.desc-cc {
 			float:left;
-			width: 60%;
+			width: 100%;
 			text-align: left;
-			margin-top: 30px;
+			margin-top: 0px;
+			font-size: 12px;
+			@media screen and (min-width: $tablet-break) {
+				margin-top: 30px;
+				width: 60%;
+				font-size: 16px;
+			}
 		}	
 	}
 }
@@ -201,10 +239,17 @@ main {
 	}	
 
 	h2 {
-		font-size: 36px;
-		padding: 35px;
+		font-size: 24px;
+		padding: 25px;
 		text-transform: uppercase;
 		text-align: center;
+		@media screen and (min-width: $tablet-break) {
+			font-size: 30px;
+			padding: 35px;
+		}
+		@media screen and (min-width: $tablet-landscape-break) {
+	        font-size: 36px;
+        }
 	}
 
 	.clients {
@@ -212,6 +257,7 @@ main {
 		float: left;
 
 		ul {
+			margin-top: 0;
 			list-style: none;
 			padding: 0;
 			text-align: center;
@@ -226,7 +272,11 @@ main {
 
 				img {
 					padding:20px;
-					max-height:120px;
+					max-height:75px;
+					@media screen and (min-width: $tablet-break) {
+						padding:20px;
+						max-height:120px;
+					}
 				}
 			}
 		}		
@@ -243,28 +293,42 @@ main {
 	h2 {
 		text-align: center;
 		text-transform: uppercase;
-		margin: 40px 0;
+		margin: 20px 0;
+		@media screen and (min-width: $tablet-break) {
+			margin: 40px 0;
+		}
 	}
 
 	ul {	
-		list-style: none;
-		min-width: 696px;
 		margin: auto;
 		height: auto;
 		padding: 0 0 40px 0;
+		height: 150px;	
+		@media screen and (min-width: $tablet-break) {
+			min-width: 696px;
+			list-style: none;
+			height: 70px;	
+			font-size:13px;
+		}
 
-		li {
-			height: 120px;			
-			display: inline;
+		@media screen and (min-width: $tablet-landscape-break) {
+			font-size:16px;
+			height: 120px;
+		}
+
+		li {				
 			padding-left: 20px;
 			color: #777;
+			@media screen and (min-width: $tablet-break) {
+				display: inline;
+			}
 		}
 	}
 }
 
 .more-me {
 	position: relative;
-	height: 750px;
+	height: auto;
 	background-color: #3c3c3c;	
 
 	&:after {
@@ -280,10 +344,15 @@ main {
 		width: 0;
 	}
 
-	.padbtm { padding-bottom:10px;}
+	.padbtm { 
+		padding-bottom:20px;
+		@media screen and (min-width: $tablet-break) {
+			padding-bottom:10px;
+		}
+	}
 
 	h2 {
-		margin-bottom: 45px;
+		margin: 25px 0 45px 0;
 		font-weight: 300;
 	}
 	
@@ -299,14 +368,14 @@ main {
 			text-align: center;
 			color:#777;
 			span {
-				font-size: 60px;
+				//font-size: 60px;
 				//line-height: 45px;
 				margin-bottom: 15px;
 				@include clearfix;
 			}
 			a {
 				color:#777;
-				text-decoration: none;
+				text-decoration: underline;
 			}
 
 		}
@@ -323,26 +392,38 @@ main {
 		border-radius: 50%;
 		color: #1bd3df;
 		display: block;
-		font-size: 60px;
-		line-height: 140px;
+		font-size: 21px;
+		line-height: 50px;
 		margin: 0 auto;
 		overflow: hidden;
 		text-align: center;
-		width: 140px;
-		height: 140px;
+		width: 50px;
+		height: 50px;
+		@media screen and (min-width: $tablet-break) {
+			font-size: 60px;
+			width: 140px;
+			height: 140px;
+			line-height: 140px;
+		}
 	}
 	.bg-square {
 		background: #333;
 		border: 1px dashed #555;		
 		color: #1bd3df;
 		display: block;
-		font-size: 60px;
-		line-height: 140px;
+		font-size: 21px;
+		line-height: 50px;
 		margin: 0 auto;
 		overflow: hidden;
 		text-align: center;
-		width: 170px;
-		height: 140px;
+		width: 60px;
+		height: 50px;
+		@media screen and (min-width: $tablet-break) {
+			font-size: 60px;
+			width: 170px;
+			height: 140px;
+			line-height: 140px;
+		}
 	}
 
 	.me-content {
@@ -373,58 +454,130 @@ main {
 
 		.slide-cc {
 			overflow: hidden;
-		}
-
-		.slide-content {
-			position: relative;
-			width:3210px;
+			height: 335px;
 			-webkit-transition: all ease-out 0.5s;
 		    -moz-transition: all ease-out 0.5s;
 		    -o-transition: all ease-out 0.5s;
 		    transition: all ease-out 0.5s;
+		    @media screen and (min-width: $tablet-break) {
+				height: 250px;
+			}
 		}
 
-		.slide-1,.slide-2,.slide-4 {
+		.slide-content {
+			position: relative;
+			width:750px;
+			-webkit-transition: all ease-out 0.5s;
+		    -moz-transition: all ease-out 0.5s;
+		    -o-transition: all ease-out 0.5s;
+		    transition: all ease-out 0.5s;
+		    @media screen and (min-width: $tablet-break) {
+				width:1920px;
+			}
+			@media screen and (min-width: $tablet-landscape-break) {
+				width:3210px;
+			}
+		}
+
+		.slide-1,.slide-2,.slide-3 {
 			float: left;
-			width: 1050px;
-			padding-right: 30px;
+			width: 250px;		
+			@media screen and (min-width: $tablet-break) {
+				width:640px;
+			}			
+			@media screen and (min-width: $tablet-landscape-break) {
+				width: 1030px;
+				padding-right: 30px;
+			}
 		}
 		
 		.slide-1 {
 			h3 {
 				float: left;
 				@include clearfix;
+				font-size: 14px;
+				@media screen and (min-width: $tablet-break) {
+					font-size: 19px;
+				}				
 			}
 			img {
-				margin:18px 0 0 15px;
+				width:55px;
+				margin:8px 0 0 15px;
+				@media screen and (min-width: $tablet-break) {
+					width:auto;
+					margin:18px 0 0 15px;
+				}
 			}
 			.copy{
 				float: left;
+				font-size:12px;
+				@media screen and (min-width: $tablet-break) {
+					font-size:16px;
+				}
 			}
-
 		}
 
+		.slide-2 {
+			.quote {
+				font-size:20px;
+				text-align: center;
+				margin-top:60px;
+				@media screen and (min-width: $tablet-break) {
+					font-size:24px;
+				}
+			}
+			.by {
+				float: right;
+				font-size: 16px;				
+			}
+		}
 	}
 }
 
 .contact {
-	height: 560px;
+	height: 350px;
 	background-color: #dedede;	
+	@media screen and (min-width: $tablet-break) {
+		height: 400px;
+	}
+	@media screen and (min-width: $tablet-landscape-break) {
+		height: 560px;
+	}
 	
 	.inner {
-		margin-top: 100px;
+		margin-top: 30px;
+		@media screen and (min-width: $tablet-break) {
+			margin-top: 60px;
+		}
+		@media screen and (min-width: $tablet-landscape-break) {
+			margin-top: 100px;
+		}
+
 		p {
 			text-align: center;
 		}
 
 		.center-list {
-			margin-top: 60px;
+			margin-top: 30px;
+			@media screen and (min-width: $tablet-break) {
+				margin-top: 40px;
+			}
+			@media screen and (min-width: $tablet-landscape-break) {
+				margin-top: 60px;
+			}
 		}
 
 		ul {
 			list-style: none;
+			padding-left: 50px;
+			float: left;
+			@media screen and (min-width: $tablet-break) {
+				padding-left: 0px;
+			}
 			li {
 				float: left;
+				margin: 0;
+				padding: 0;
 				a {
 					color: black;
 					text-decoration: none;
@@ -433,8 +586,15 @@ main {
 				    -o-transition: all ease-out 0.5s;
 				    transition: all ease-out 0.5s;
 					&[class^="icon-"], [class*=" icon-"] {
-						font-size: 65px;
-						padding:25px;
+						font-size: 35px;
+						padding:15px;
+						@media screen and (min-width: $tablet-break) {
+							font-size: 55px;
+							padding:25px;
+						}	
+						@media screen and (min-width: $tablet-landscape-break) {
+							font-size: 65px;
+						}			
 					}
 					&:hover {
 						color: #777;
@@ -668,33 +828,50 @@ main {
 	}
 
 	h3 {
-		font-size:22px;
+		font-size:16px;
 		font-weight: 300;
 		line-height: 1;
 		text-align: left;
 		margin-top: 0;
 		text-transform: uppercase;
+		@media screen and (min-width: $tablet-break) {
+			font-size: 18px;
+		}
+		@media screen and (min-width: $tablet-landscape-break) {
+			font-size: 22px;
+		}
 	}
 
 	p {
-		font-size: 18px;
+		font-size: 12px;
 		font-weight: 300;
 		text-align: left;
+
+		@media screen and (min-width: $tablet-break) {
+			font-size: 16px;
+		}
+		@media screen and (min-width: $tablet-landscape-break) {
+			font-size: 22px;
+		}
 	}
 }
 
 /* Sides */
 .slide-out {
-	width: 50%;
+	width: 100%;
 	float: left;
 	margin: 0;
-	padding: 25px 4%;
+	padding: 15px 4%;
 	overflow: hidden;
-	min-height: 12em;
+	/*min-height: 12em;*/
 	-webkit-transition: -webkit-transform 0.5s;
 	-moz-transition: -moz-transform 0.5s;
 	transition: transform 0.5s;
 
+	@media screen and (min-width: $tablet-break) {
+		width: 50%;
+		padding: 25px 4%;
+	}
 
 	&:before,&:after {
 		content: " ";
@@ -714,14 +891,19 @@ main {
 
 		img {
 			float: left;
-			width: 450px;
+			width: 260px;
 			border-radius: 2%;
+			@media screen and (min-width: $tablet-break) {
+				width: 450px;				
+			}
 		}
 	}
 
 	&.slide-side-left {
-		text-align: right;
-		padding-left:0px;
+		text-align: right;		
+		@media screen and (min-width: $tablet-break) {
+			padding-left:0px;			
+		}
 
 		img {
 			float:left;
@@ -752,6 +934,11 @@ main {
 
 
 #map-canvas {
-	width: 1030px;
-	height: 710px;
+	width: 250px;
+	height: 330px;
+	float: left;
+	@media screen and (min-width: $tablet-break) {
+		width: 1030px;
+		height: 450px;			
+	}
 }

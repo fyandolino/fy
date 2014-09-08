@@ -25,86 +25,72 @@ var fy = $;
             icon: image
         });
 
-        var line;
+    var line;
 
     var locData  = [
-            {
-            'location':'New York',
-            'lat': 40.712784, 
-            'long': -74.005941,
-            }, 
-            {
-            'location':'Italy',
-            'lat': 41.871940, 
-            'long': 12.567380,
-            },
-            {
-            'location':'Spain',
-            'lat': 40.463667, 
-            'long': -3.749220,
-            },
-            {
-            'location':'Brazil',
-            'lat': -14.235004, 
-            'long': -51.925280,
-            },
-            {
-            'location':'Germany',
-            'lat': 51.165691, 
-            'long': 10.451526,
-            },
-            {
-            'location':'Amsterdamn',
-            'lat': 52.370216, 
-            'long': 4.895168,
-            },
-            {
-            'location':'Greece',
-            'lat': 39.074208, 
-            'long': 21.824312,
-            },
-            {
-            'location':'France',
-            'lat': 46.227638, 
-            'long': 2.213749,
-            },
-            {
-            'location':'Ireland',
-            'lat': 53.412910, 
-            'long': -8.243890,
-            },
-            {
-            'location':'Mexico',
-            'lat': 23.634501, 
-            'long': -102.552784,
-            },
-            {
-            'location':'Thailand',
-            'lat': 15.870032, 
-            'long': 100.992541,
-            },
-            {            
-            'location':'Singapore',
-            'lat': 1.352083, 
-            'long': 103.819836,
-            }
-        ];
+        {
+        'location':'New York',
+        'lat': 40.712784, 
+        'long': -74.005941,
+        }, 
+        {
+        'location':'Italy',
+        'lat': 41.871940, 
+        'long': 12.567380,
+        },
+        {
+        'location':'Spain',
+        'lat': 40.463667, 
+        'long': -3.749220,
+        },
+        {
+        'location':'Brazil',
+        'lat': -14.235004, 
+        'long': -51.925280,
+        },
+        {
+        'location':'Germany',
+        'lat': 51.165691, 
+        'long': 10.451526,
+        },
+        {
+        'location':'Amsterdamn',
+        'lat': 52.370216, 
+        'long': 4.895168,
+        },
+        {
+        'location':'Greece',
+        'lat': 39.074208, 
+        'long': 21.824312,
+        },
+        {
+        'location':'France',
+        'lat': 46.227638, 
+        'long': 2.213749,
+        },
+        {
+        'location':'Ireland',
+        'lat': 53.412910, 
+        'long': -8.243890,
+        },
+        {
+        'location':'Mexico',
+        'lat': 23.634501, 
+        'long': -102.552784,
+        },
+        {
+        'location':'Thailand',
+        'lat': 15.870032, 
+        'long': 100.992541,
+        },
+        {            
+        'location':'Singapore',
+        'lat': 1.352083, 
+        'long': 103.819836,
+        }
+    ];
 
-      /*{'Italy', 41.871940, 12.567380},
-      {'Spain', 40.463667, -3.749220},
-      {'Brazil', -14.235004, -51.925280},
-      {'Germany', 51.165691, 10.451526},
-      {'Amsterdamn', 52.370216, 4.895168},
-      {'Greece', 39.074208, 21.824312},
-      {'France', 46.227638, 2.213749},
-      {'Ireland', 53.412910, -8.243890},
-      {'Mexico', 23.634501, -102.552784},
-      {'Thailand', 15.870032, 100.992541},
-      {'Singapore', 1.352083, 103.819836}*/
-    
-
-
-    $.canvasDisplay = function () { 
+    $.gmapsTravel = function () { 
 
         function init(){
             console.log(locData);
@@ -199,5 +185,5 @@ var fy = $;
 } (jQuery));
 
 $(function() {
-    new fy.canvasDisplay();
+    new fy.gmapsTravel();
 });
