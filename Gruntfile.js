@@ -115,13 +115,28 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    autoprefixer: {
+	    options: {
+	      browsers: ['last 2 versions', 'ie 9']
+	    },
+	    single_file: {
+	      options: {
+	        // Target-specific options go here.
+	      },
+	      src: 'public/css/main.css',
+	      dest: 'public/css/main.css'
+	    },
+	},
+
+
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'concat', 'uglify'],
       options: { livereload: true },
       sass: {
 	    files: 'sass/{,*/}*.{scss,sass}',
-	    tasks: ['sass:dev','concat:css']
+	    tasks: ['sass:dev','autoprefixer','concat:css']
 	  }
     }
   });
@@ -132,154 +147,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('test', ['jshint']);
   grunt.registerTask('default', ['express','watch']);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// module.exports = function(grunt) {
-	
-// 	// Project configuration.
-// 	grunt.initConfig({
-	
-// 		pkg: grunt.file.readJSON('package.json'),
-		
-// 		/* Checks changes to the following folders */
-// 		watch: {
-// 			src: {
-// 				files: [					
-// 					'js/lib/*.js',
-// 					'js/src/*.js'
-// 				],
-				
-// 				tasks: ['default']
-// 			},
-// 		    inst: {
-// 		    	files: [
-// 		    		'tools/sass/*.scss'
-// 		    	]
-// 		    },
-// 		},
-		
-// 		/* JS Lint */
-// 		jshint: {
-// 			options: {
-// 				force: true,
-// 				bitwise: true,
-// 				camelcase: false,
-// 				curly: true,
-// 				eqeqeq: true,
-// 				/*es3: true,*/
-// 				immed: true,
-// 				/*indent: 4,*/
-// 				/*latedef: false,*/
-// 				newcap: true,
-// 				quotmark: 'single',
-// 				undef: true,
-// 				jquery: true,
-// 				"-W099": true,
-// 				"-W065": true,
-// 				"-W030": true
-// 			},
-			
-// 			files: [
-// 				'js/src/*.js',				
-// 				'!js/src/*.min.js'
-// 			]
-// 		},
-		
-// 		/* Concatenation */
-// 		concat: {
-// 			options: { 
-// 				separator: '/* END FILE */\n',
-// 			},
-
-// 			dist: {
-// 				src: [
-// 					'js/lib/jquery.min.js', 
-// 					'js/lib/parse-1.2.18.min.js', 
-// 					'js/lib/handlebars-v1.3.0.js',
-// 					'js/src/*.js',
-				
-// 					/* DO NOT CONCATENATE MINIFIED FILES */
-// 					'!js/src/*.min.js'			
-// 				],
-				
-// 				dest: 'js/all.js',				
-// 			}
-// 		},
-		
-// 		/* Minification */
-// 		uglify: {
-// 			options: {
-// 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-// 			},
-			
-// 			dynamic_mappings: {
-// 				files: [
-// 					{
-// 					  expand: true,     // Enable dynamic expansion.
-// 					  src: [
-// 						  'js/src/*.js',
-// 						  'js/*.js'
-// 					  ],
-// 					  dest: '',
-// 					  ext: '.min.js'
-// 					}
-// 				]
-// 			}
-// 		}
-// 	});
-	
-// 	// Load thge plugin that provides the "jshint" task.
-// 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	
-// 	// Load the plugin that provides the "concat" task.
-// 	grunt.loadNpmTasks('grunt-contrib-concat');
-	
-// 	// Load the plugin that provides the "uglify" task.
-// 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	
-// 	// Load the plugin that provides the "watch" task.
-// 	grunt.loadNpmTasks('grunt-contrib-watch');
-
-// 	// Default task(s).
-// 	grunt.registerTask('default', ['jshint', 'concat'/*, 'uglify', 'yuidoc'*/]);
-
-// };

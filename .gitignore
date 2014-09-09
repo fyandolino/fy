@@ -6,3 +6,5 @@
 .sass-cache/2d0de94645ada1f464f39089e68b4f7b37047519/_variables.scssc
 .sass-cache/9cc5f93bab8856fb7f385b67b6d872acc67b2ed8/main.scssc
 *.TMP
+node_modules/
+.sass-cache/

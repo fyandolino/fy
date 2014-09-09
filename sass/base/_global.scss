@@ -28,6 +28,9 @@
         width: 760px;
     }
     @media screen and (min-width: $tablet-landscape-break) {
+        width: 1000px;
+    }
+    @media screen and (min-width: $desktop-break) {
         width: 1170px;
     }
 }

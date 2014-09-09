@@ -43,11 +43,7 @@ var fy = $;
                     if(!didScroll) {
                         didScroll = true;                       
                         scrollPage();  
-                        activeNav();
-
-                       /* if (fy.viewDetect.top) {
-                            //console.log('hey this is working');
-                        }   */                     
+                        activeNav();                  
                     }                    
                 });
 
@@ -83,8 +79,6 @@ var fy = $;
                     slideElem = $('.slide-out-cc'),
                     elementWidth = slideElem.width() / 2;
 
-                   //fy.elemInview($('.work'));
-
                    slideElem.bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
                       if (isInView) {
                         //console.log('element is now visible in the viewport');
@@ -95,7 +89,6 @@ var fy = $;
                         });     
 
                       } else {
-                        //console.log('element has gone out of viewport');      
                                    
                          $('.slide-side-right').css({
                             '-webkit-transform': 'translateX('+elementWidth+'px)',
@@ -116,9 +109,6 @@ var fy = $;
                         );
                     });       
 
-                    // $('.more-me').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
-                    //     counter();
-                    // });     
                     
                     $('.about-info').on('click', function(e){
                         e.preventDefault();
@@ -128,13 +118,9 @@ var fy = $;
                             mapHeight = $('#map-canvas').height(),
                             slideHeight = $('.slide-1').height();
 
-                        $('.arrow-up').css({
-                            'left':arrowPos
-                        });
+                        $('.arrow-up').css({'left':arrowPos});
 
-                        $('.slide-content').css({
-                            'right':slideWidth
-                        });
+                        $('.slide-content').css({'right':slideWidth});
 
                         if (dataType === 'travel') {
                             $('.slide-cc').height(mapHeight);
@@ -143,8 +129,6 @@ var fy = $;
                         }
 
                     });
-
-
 
                 /*if(!getViewportH(imgElem)) { 
                     imgElem.addClass('moveBG');  
@@ -158,13 +142,10 @@ var fy = $;
                 var topRange = 90,
                     contentTop = [];
 
-
                 // Set up content an array of locations
                 $('.section-cc').each(function(){
                     contentTop.push( $(this).offset().top );
                 });
-
-                //console.log(contentTop);
 
                 var winTop = $(window).scrollTop(),
                     bodyHt = $(document).height(),
@@ -172,12 +153,6 @@ var fy = $;
 
                 $.each( contentTop, function(i,loc){
                    if ( ( loc > winTop && ( loc < winTop + topRange || ( winTop + vpHt ) >= bodyHt ) ) ){
-
-                    console.log('loc',loc);
-
-                    console.log('winTop',winTop);
-
-                    console.log('winTop + topRange',winTop + topRange);
 
                     $('nav a').removeClass('active').eq(i).addClass('active');
                    }
@@ -212,35 +187,14 @@ var fy = $;
                  }, 300);                
             }
 
-            /* Scroll Events */
-
             function getViewportH(elem) {
 
                 var docViewTop = $(window).scrollTop(),
                     docViewBottom = docViewTop + $(window).height(),
                     elemTop = $(elem).offset().top,
                     elemBottom = elemTop + $(elem).height();
-
-                //return ((elemBottom >= docViewTop - ($(elem).height() * 0.9)  ) && (elemTop <= docViewBottom - ($(elem).height() * 0.9)  ));
-
                 return ( elemTop <= docViewBottom - ($(elem).height() * 0.9)) && (elemTop > docViewTop - ($(elem).height() * 0.9) );
-            
              }
-
-             /*function counter() {
-                var moreMe = $('.more-me'),
-                    from = $('.counter').data('from'),
-                    to = $('.counter').data('to');
-
-                var i = from;
-                setInterval(function(){
-                    i++;
-                    if(i <= to) {                         
-                        $('.counter').hide().html(i).fadeIn();     
-                    }
-                },450);
-
-             }*/
         
             init();
     };

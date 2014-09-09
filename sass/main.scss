@@ -5,16 +5,11 @@
 @import "base/_layout.scss";
 @import "base/_nav.scss";
 
-
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -43,11 +38,7 @@ section {
 main {
 	overflow-x: hidden;
 	@include clearfix;
-	-webkit-transition: all ease-out 1s;
-    -moz-transition: all ease-out 1s;	
-    -o-transition: all ease-out 1s;
     transition: all ease-out 1s;
-
 }
 
 .center-list {
@@ -69,9 +60,6 @@ main {
 		background-size: cover;
 		height: 100%;
 		width: 100%;
-		-webkit-transition: all ease-out 1s;
-	    -moz-transition: all ease-out 1s;
-	    -o-transition: all ease-out 1s;
 	    transition: all ease-out 1s;
 
 	    &.moveBG {
@@ -86,11 +74,9 @@ main {
 
 @-webkit-keyframes imgAnim {
 	0% {
-		-webkit-filter: saturate(1);
 		filter: saturate(1);
 	}
 	100% {
-		-webkit-filter: saturate(9);
 		filter: saturate(9);
 	}
 }
@@ -110,29 +96,25 @@ main {
 			display:block;
 			background-position: center center;
 			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-size: cover;
+			/*background-attachment: fixed;
+			background-size: cover;*/
 			height: 100%;
 			width: 100%;
 			background-image:url('/img/bcg_slide-1.jpg');
-			-webkit-transition: all ease-out 1s;
-		    -moz-transition: all ease-out 1s;
-		    -o-transition: all ease-out 1s;
 		    transition: all ease-out 1s;
-			-webkit-filter: grayscale(0.7);
   			filter: grayscale(0.7);
 		}	
 
 		&:hover {
 
 			&:before {
-				-webkit-animation-name: imgAnim;
-				-webkit-animation-duration: 2s;
-				-webkit-animation-iteration-count: 5;
-				-webkit-animation-direction: alternate;
-				-webkit-animation-timing-function: ease-out;
-				-webkit-animation-fill-mode: forwards;
-				-webkit-animation-delay: 0s;
+				animation-name: imgAnim;
+				animation-duration: 2s;
+				animation-iteration-count: 5;
+				animation-direction: alternate;
+				animation-timing-function: ease-out;
+				animation-fill-mode: forwards;
+				animation-delay: 0s;
 	  		}
 		}	
 
@@ -145,8 +127,7 @@ main {
 			color: #333;
 			letter-spacing: 4px;
 			font-size: 20px;
-			opacity:.8;	
-  			-webkit-filter: none;
+			opacity:.8;	  			
   			filter: none; 
   			width: 200px;
   			line-height: 25px;
@@ -167,7 +148,7 @@ main {
 	background-color: #dedede;
 
 	.inner {
-		padding: 5px;
+		padding: 10px;
 		@media screen and (min-width: $tablet-break) {	
 			padding: 40px;		
 			margin: auto;
@@ -188,18 +169,14 @@ main {
 			}
 			img {
 				border: 10px solid #494949;
-				-moz-border-radius: 50%;
-				-webkit-border-radius: 50%;
 				border-radius: 50%;
 				height: 100px;
 				margin: 15px 0 0 0;
-				-webkit-filter: grayscale(0.7);
   				filter: grayscale(0.7);
 				@media screen and (min-width: $tablet-break) {
 					height: 190px;
 					margin: 20px 0;
-				}
-				
+				}				
 			}
 		}
 
@@ -212,7 +189,7 @@ main {
 			@media screen and (min-width: $tablet-break) {
 				margin-top: 30px;
 				width: 60%;
-				font-size: 16px;
+				font-size: 18px;
 			}
 		}	
 	}
@@ -475,6 +452,9 @@ main {
 				width:1920px;
 			}
 			@media screen and (min-width: $tablet-landscape-break) {
+				width:2580px;
+			}
+			@media screen and (min-width: $desktop-break) {
 				width:3210px;
 			}
 		}
@@ -486,8 +466,11 @@ main {
 				width:640px;
 			}			
 			@media screen and (min-width: $tablet-landscape-break) {
-				width: 1030px;
+				width: 860px;
 				padding-right: 30px;
+			}
+			@media screen and (min-width: $desktop-break) {
+				width: 1030px;
 			}
 		}
 		

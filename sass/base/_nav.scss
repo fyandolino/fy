@@ -1,8 +1,11 @@
 /* BEGIN GLOBAL NAV */
 
 header {
-  height:230px;
+  height:150px;
   @include clearfix;
+  @media screen and (min-width: $tablet-break) {
+    height: 230px;
+  }
 }
 
 
@@ -13,24 +16,34 @@ header {
     width: 100%;
     background: #fff;
     z-index: 10000;
-    height: 230px;
+    height: 150px;
     overflow: hidden;
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     transition: height 0.3s;
     border-bottom: 1px solid #dedede;
+    @media screen and (min-width: $tablet-break) {
+      height: 230px;
+    }
 
       .header-inner {
         width:100%;
-        max-width: 1130px;
+        max-width: 320px;
         margin: 0 auto;
         padding: 0 5px;        
 
         @media screen and (min-width: $tablet-break) {
-          width: 90%;
-          padding: 0 30px;
-        }       
-        
+          /*width: 90%;*/
+          max-width: 760px;
+          padding: 0 0 0 35px;
+        }   
+        @media screen and (min-width: $tablet-landscape-break) {
+            max-width: 1000px;
+            padding: 0 0 0 45px;
+        }
+        @media screen and (min-width: $desktop-break) {
+            max-width: 1170px;
+        }        
       }
 
       h1,
@@ -48,7 +61,7 @@ header {
 
       h1,
       nav a {
-        line-height: 115px;
+        line-height: 75px;
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
         transition: all 0.3s;
@@ -68,15 +81,22 @@ header {
         float: none;
         @media screen and (min-width: $tablet-break) {
           float: left;
-          font-size: 40px;
+          font-size: 30px;
         }  
+        @media screen and (min-width: $desktop-break) {
+          font-size: 40px;
+        } 
       }
 
       nav {
         float:none;
         @media screen and (min-width: $tablet-break) {
           float: right;
+          padding-right: 35px;
         } 
+        @media screen and (min-width: $desktop-break) {
+          padding-right: 45px;
+        }
       }
 
       nav a  {
@@ -89,11 +109,12 @@ header {
           font-size: 12px;  
         @media screen and (min-width: $tablet-break) {         
           margin: 0 10px;
-          font-size: 18px;          
+          font-size: 14px;          
         }
 
-        @media screen and (min-width: $tablet-break) {
+        @media screen and (min-width: $desktop-break) {
           margin: 0 0 0 20px;
+          font-size: 18px;    
         }  
 
         &.icon-arrow-up {
@@ -116,11 +137,17 @@ header {
       }
 
       &.header-cc-shrink {
-          height: 90px;
+          height: 70px;
+          @media screen and (min-width: $tablet-break) {
+            height: 90px;
+          }
 
           h1,
           nav a {
-            line-height: 90px;
+            line-height: 70px;
+            @media screen and (min-width: $tablet-break) {
+              line-height: 90px;
+            }
             &.icon-arrow-up {
               opacity: 1;
             }
