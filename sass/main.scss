@@ -14,16 +14,13 @@
 }
 
 body {
-    font: 16px/26px;
-    font-family: 'Lato', sans-serif;
+    font: 16px/22px 'Lato', sans-serif;
     height: 100%;
 	min-height: 100%;
 	background-color: #000000;
 }
 
 section {
-	//min-width: 960px;	
-
 	h2 {
 		font-size: 26px;		
 		line-height: 42px;
@@ -81,7 +78,6 @@ main {
 	}
 }
 
-
 .intro {
 	height: 150px;
 	@media screen and (min-width: $tablet-break) {
@@ -96,8 +92,7 @@ main {
 			display:block;
 			background-position: center center;
 			background-repeat: no-repeat;
-			/*background-attachment: fixed;
-			background-size: cover;*/
+			background-size: cover;
 			height: 100%;
 			width: 100%;
 			background-image:url('/img/bcg_slide-1.jpg');
@@ -121,7 +116,7 @@ main {
   		h2 {
 			position: absolute;
   			top:35%;
-  			left: 20%;
+  			left: 34%;
   			margin:0;
   			text-transform: capitalize;
 			color: #333;
@@ -138,7 +133,7 @@ main {
   				width:250px;	          
 	        }
 	        @media screen and (min-width: $tablet-landscape-break) {
-  				width:300px;	          
+  				left: 45%;       
 	        }
   		}
 	}	
@@ -216,17 +211,12 @@ main {
 	}	
 
 	h2 {
-		font-size: 24px;
 		padding: 25px;
 		text-transform: uppercase;
 		text-align: center;
 		@media screen and (min-width: $tablet-break) {
-			font-size: 30px;
 			padding: 35px;
 		}
-		@media screen and (min-width: $tablet-landscape-break) {
-	        font-size: 36px;
-        }
 	}
 
 	.clients {
@@ -279,8 +269,9 @@ main {
 	ul {	
 		margin: auto;
 		height: auto;
-		padding: 0 0 40px 0;
+		padding: 0;
 		height: 150px;	
+		margin-bottom: 20px;
 		@media screen and (min-width: $tablet-break) {
 			min-width: 696px;
 			list-style: none;
@@ -289,15 +280,14 @@ main {
 		}
 
 		@media screen and (min-width: $tablet-landscape-break) {
-			font-size:16px;
-			height: 120px;
+			font-size:16px;			
 		}
 
 		li {				
-			padding-left: 20px;
 			color: #777;
 			@media screen and (min-width: $tablet-break) {
 				display: inline;
+				padding-left: 20px;
 			}
 		}
 	}
@@ -330,7 +320,7 @@ main {
 
 	h2 {
 		margin: 25px 0 45px 0;
-		font-weight: 300;
+		color:#fff;
 	}
 	
 	.col {
@@ -345,14 +335,15 @@ main {
 			text-align: center;
 			color:#777;
 			span {
-				//font-size: 60px;
-				//line-height: 45px;
 				margin-bottom: 15px;
 				@include clearfix;
 			}
 			a {
 				color:#777;
-				text-decoration: underline;
+				text-decoration: none;	
+				.control {
+					text-decoration: underline;
+				}			
 			}
 
 		}
@@ -364,8 +355,6 @@ main {
 	.bg-circle {
 		background: #333;
 		border: 1px dashed #555;
-		-moz-border-radius: 50%;
-		-webkit-border-radius: 50%;
 		border-radius: 50%;
 		color: #1bd3df;
 		display: block;
@@ -423,55 +412,23 @@ main {
 			margin-left: -20px;
 			position: absolute;
 			width: 0;
-			-webkit-transition: all ease-out 0.5s;
-		    -moz-transition: all ease-out 0.5s;
-		    -o-transition: all ease-out 0.5s;
 		    transition: all ease-out 0.5s;
 		}
 
 		.slide-cc {
 			overflow: hidden;
-			height: 335px;
-			-webkit-transition: all ease-out 0.5s;
-		    -moz-transition: all ease-out 0.5s;
-		    -o-transition: all ease-out 0.5s;
-		    transition: all ease-out 0.5s;
-		    @media screen and (min-width: $tablet-break) {
-				height: 250px;
-			}
+			height: auto;
+		    transition: all ease-out 0.5s;		    
 		}
 
 		.slide-content {
 			position: relative;
-			width:750px;
-			-webkit-transition: all ease-out 0.5s;
-		    -moz-transition: all ease-out 0.5s;
-		    -o-transition: all ease-out 0.5s;
-		    transition: all ease-out 0.5s;
-		    @media screen and (min-width: $tablet-break) {
-				width:1920px;
-			}
-			@media screen and (min-width: $tablet-landscape-break) {
-				width:2580px;
-			}
-			@media screen and (min-width: $desktop-break) {
-				width:3210px;
-			}
+		    transition: all ease-out 0.5s;		    
 		}
 
 		.slide-1,.slide-2,.slide-3 {
-			float: left;
-			width: 250px;		
-			@media screen and (min-width: $tablet-break) {
-				width:640px;
-			}			
-			@media screen and (min-width: $tablet-landscape-break) {
-				width: 860px;
-				padding-right: 30px;
-			}
-			@media screen and (min-width: $desktop-break) {
-				width: 1030px;
-			}
+			float: left;		
+			width: 33.3%;			
 		}
 		
 		.slide-1 {
@@ -498,6 +455,11 @@ main {
 					font-size:16px;
 				}
 			}
+
+			ul {
+				padding-left: 20px;
+			}
+
 		}
 
 		.slide-2 {
@@ -511,7 +473,8 @@ main {
 			}
 			.by {
 				float: right;
-				font-size: 16px;				
+				font-size: 16px;	
+				padding-right: 10px;			
 			}
 		}
 	}
@@ -552,9 +515,10 @@ main {
 
 		ul {
 			list-style: none;
-			padding-left: 50px;
+			padding-left: 0px;
 			float: left;
-			@media screen and (min-width: $tablet-break) {
+			padding-left: 27px;
+			@media screen and (min-width: $mobile-android-break) {
 				padding-left: 0px;
 			}
 			li {
@@ -563,11 +527,8 @@ main {
 				padding: 0;
 				a {
 					color: black;
+					transition: all ease-out 0.5s;
 					text-decoration: none;
-					-webkit-transition: all ease-out 0.5s;
-				    -moz-transition: all ease-out 0.5s;
-				    -o-transition: all ease-out 0.5s;
-				    transition: all ease-out 0.5s;
 					&[class^="icon-"], [class*=" icon-"] {
 						font-size: 35px;
 						padding:15px;
@@ -582,11 +543,9 @@ main {
 					&:hover {
 						color: #777;
 					}
-				}
-				
+				}				
 			}
 		}
-
 	}
 }
 
@@ -633,38 +592,34 @@ main {
 			    background-repeat: none;
 			    opacity: 0;
 			    z-index: 0;
-			    //-webkit-animation-name: imageAnimation;
-			    -webkit-animation-duration: 10s;
-			    -webkit-animation-iteration-count: 1;    
-			    -webkit-animation-fill-mode: forwards;
-			    -webkit-animation-play-state:paused;
-
-			    -webkit-transition: opacity ease 0.1s;
-			    -moz-transition: opacity ease 0.1s;
-			    -o-transition: opacity ease 0.1s;
+			    //animation-name: imageAnimation;
+			    animation-duration: 10s;
+			    animation-iteration-count: 1;    
+			    animation-fill-mode: forwards;
+			    animation-play-state:paused;
 			    transition: opacity ease 0.1s;
 			}	
 
 		&:nth-child(1) { 
 			span {
 				background-image: url(/img/map/z4.jpg); 
-				-webkit-animation-name: imageAnimation;
+				animation-name: imageAnimation;
 			}		    
 		}
 
 		&:nth-child(2) { 
 			span {
 				background-image: url(/img/map/z3.jpg); 
-				-webkit-animation-name: imageAnimation;
-		    	-webkit-animation-delay: 2s; 
+				animation-name: imageAnimation;
+		    	animation-delay: 2s; 
 			}		    
 		}
 
 		&:nth-child(3) { 
 			span {
 				background-image: url(/img/map/z2.jpg); 
-				-webkit-animation-name: imageAnimation;
-		    	-webkit-animation-delay: 4s; 
+				animation-name: imageAnimation;
+		    	animation-delay: 4s; 
 			}		    
 		}
 
@@ -672,11 +627,10 @@ main {
 
 			span {
 				background-image: url(/img/map/z1.jpg); 
-		    	-webkit-animation-delay: 6s; 		
-		    	-webkit-animation-name: end;    
+		    	animation-delay: 6s; 		
+		    	animation-name: end;    
 
 				.here {
-					//z-index:1000;
 					position: absolute;
 					top:50%;
 					left:57%;
@@ -686,36 +640,25 @@ main {
 						width: 20px;
 						height: 20px;
 						border: 2px solid #0066f7;
-						-webkit-border-radius: 10px;
-						-moz-border-radius: 10px;
 						border-radius: 10px;
 						background-image: radial-gradient(circle farthest-side at right, #008cf8, #0066f7);
-						//z-index: 10;
 						position: absolute;
 					}
 
 					.pulse {
 						border: 30px solid #0066f7;
 						background: transparent;
-						-webkit-border-radius: 60px;
-						-moz-border-radius: 60px;
 						border-radius: 60px;
 						height: 110px;
 						width: 110px;
-						-webkit-animation: pulse 3s ease-out;
-						-moz-animation: pulse 3s ease-out;
 						animation: pulse 3s ease-out;
-						-webkit-animation-iteration-count: infinite;
-						-moz-animation-iteration-count: infinite;
 						animation-iteration-count: infinite;
 						position: absolute;
 						top: -45px;
 						left: -45px;
-						//z-index: 1;
 						opacity: 0;
 					}
 				}
-
 			}		    
 		}
 
@@ -723,76 +666,53 @@ main {
 	}
 }
 
-@-webkit-keyframes imageAnimation { 
+@keyframes imageAnimation { 
     0% { opacity: 0; }
     25% {
     	opacity: 1;
-    	-webkit-transform: scale(1.1);
+    	transform: scale(1.1);
     }
     50% {
     	opacity: 1;
-    	-webkit-transform: scale(1.1);
+    	transform: scale(1.1);
     }   
 }
 
-@-webkit-keyframes end { 
+@keyframes end { 
     0% { opacity: 0; }
     25% {
     	opacity: 1;
-    	-webkit-transform: scale(1.1);
+    	transform: scale(1.1);
     }
     10% {
     	opacity: 1;
-    	-webkit-transform: scale(1.1);
+    	transform: scale(1.1);
     }   
     100% {
     	opacity: 1;
-    	-webkit-transform: scale(1.1);
+    	transform: scale(1.1);
     }  
 }
 
-@-moz-keyframes pulse {
+@keyframes "pulse" {
 	0% {
-    	-moz-transform: scale(0);
-    	opacity: 0.0;
- 	}
-	25% {
-	    -moz-transform: scale(0);
-	    opacity: 0.1;
-	}
-	50% {
-	    -moz-transform: scale(0.1);
-	    opacity: 0.3;
-	}
-	75% {
-	    -moz-transform: scale(0.5);
-	    opacity: 0.5;
-	}
-	100% {
-	    -moz-transform: scale(1);
-		opacity: 0.0;
-	}
-}
-
-@-webkit-keyframes "pulse" {
-	0% {
-    	-webkit-transform: scale(0);
+    	transform: scale(0);
     	opacity: 0.0;
  	}
  25% {
-    	-webkit-transform: scale(0);
+    	transform: scale(0);
     	opacity: 0.1;
  	}
  50% {
-    	-webkit-transform: scale(0.1);
+    	transform: scale(0.1);
     	opacity: 0.3;
  	}
  75% {
-    	-webkit-transform: scale(0.5);
+    	transform: scale(0.5);
     	opacity: 0.5;
  	}
  100% {
-    	-webkit-transform: scale(1);
+    	transform: scale(1);
     	opacity: 0.0;
  	}
 }
@@ -832,10 +752,7 @@ main {
 
 		@media screen and (min-width: $tablet-break) {
 			font-size: 16px;
-		}
-		@media screen and (min-width: $tablet-landscape-break) {
-			font-size: 22px;
-		}
+		}		
 	}
 }
 
@@ -846,9 +763,6 @@ main {
 	margin: 0;
 	padding: 15px 4%;
 	overflow: hidden;
-	/*min-height: 12em;*/
-	-webkit-transition: -webkit-transform 0.5s;
-	-moz-transition: -moz-transform 0.5s;
 	transition: transform 0.5s;
 
 	@media screen and (min-width: $tablet-break) {
@@ -867,9 +781,6 @@ main {
 	&.slide-side-right {
 		text-align: left;
 		padding-right:0px;
-
-		-webkit-transition-delay: 0.2s;
-	    -moz-transition-delay: 0.2s;
 	    transition-delay: 0.2s;
 
 		img {
@@ -900,28 +811,22 @@ main {
 .cbp-so-init {
 	&.slide-out {
 		opacity: 0;
-		-webkit-transition: none;
-	    -moz-transition: none;
 	    transition: none;
 	}
 
 	.slide-side-left,
 	.slide-side-right {
-		-webkit-transform: translateX(0px);
-		-moz-transform: translateX(0px);
 		transform: translateX(0px);
 		opacity: 1;
 	}
-
 }
 
-
 #map-canvas {
-	width: 250px;
+	width: 100%;
 	height: 330px;
-	float: left;
+	margin: auto;
 	@media screen and (min-width: $tablet-break) {
-		width: 1030px;
+		width: 100%;
 		height: 450px;			
 	}
 }
