@@ -479,6 +479,18 @@ main:after {
             filter: saturate(9);
   }
 }
+
+@keyframes imgAnim {
+  0% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+
+  100% {
+    -webkit-filter: saturate(9);
+            filter: saturate(9);
+  }
+}
 .intro {
   height: 150px;
 }

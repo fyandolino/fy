@@ -111,7 +111,7 @@ var fy = $;
 
                     $('.where').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
                         $('.cb-slideshow li span').css(
-                            '-webkit-animation-play-state','running'
+                            'animation-play-state','running'
                         );
                     });       
 

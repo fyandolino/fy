@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
 				"hero",
 				"heroHeight"
 			],
@@ -32,18 +60,18 @@
 	"buffers":
 	[
 		{
-			"file": "sass/main.scss",
+			"file": "public/canvas.html",
 			"settings":
 			{
-				"buffer_size": 12229,
+				"buffer_size": 1295,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sass/base/_nav.scss",
+			"file": "public/index.html",
 			"settings":
 			{
-				"buffer_size": 2393,
+				"buffer_size": 9437,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +79,7 @@
 			"file": "public/js/src/main.js",
 			"settings":
 			{
-				"buffer_size": 8076,
+				"buffer_size": 12901,
 				"line_ending": "Windows"
 			}
 		},
@@ -59,7 +87,7 @@
 			"file": "Gruntfile.js",
 			"settings":
 			{
-				"buffer_size": 5242,
+				"buffer_size": 3208,
 				"line_ending": "Windows"
 			}
 		}
@@ -104,6 +132,29 @@
 	},
 	"file_history":
 	[
+		"/C/Users/franky/workspace/fy/public/js/src/global.js",
+		"/C/Users/franky/workspace/samsung/common/js/src/pages/pdp-wow.js",
+		"/C/Users/franky/workspace/fy/sass/main.scss",
+		"/C/Users/franky/workspace/fy/sass/base/_global.scss",
+		"/C/Users/franky/workspace/fy/sass/base/_variables.scss",
+		"/C/Users/franky/workspace/samsung/common/js/src/utilities.js",
+		"/C/Users/franky/workspace/fy/sass/base/_nav.scss",
+		"/C/Users/franky/Downloads/icomoon/style.css",
+		"/C/Users/franky/workspace/fy/sass/selection.json",
+		"/C/Users/franky/Downloads/icomoon (1)/style.css",
+		"/C/Users/franky/workspace/fy/sass/base/_fonts.scss",
+		"/C/Users/franky/workspace/fy/public/js/src/canvas.js",
+		"/C/Users/franky/workspace/fy/public/img/map/airplane.svg",
+		"/C/Users/franky/workspace/fy/Gruntfile.js",
+		"/C/Users/franky/workspace/bz/js/src/main.js",
+		"/C/Users/franky/workspace/hyatt-pitch/public/index.html",
+		"/C/Users/franky/workspace/hyatt-pitch/public/js/src/main.js",
+		"/C/Users/franky/workspace/fy/sass/base/_layout.scss",
+		"/C/Users/franky/workspace/fy/sass/base/_mixins.scss",
+		"/C/Users/franky/workspace/fy/public/fonts/icomoon.svg",
+		"/C/Users/franky/workspace/fy/public/js/src/main.js",
+		"/C/Users/franky/workspace/fy/public/index.html",
+		"/C/Users/franky/workspace/yelpapi/public/index.html",
 		"/C/Users/franky/workspace/fy/index.html",
 		"/Users/fyandolino/Documents/Websites/fy/package.json",
 		"/Users/fyandolino/Documents/Websites/Samsung/tools/sass/pages/pdp-wow.scss",
@@ -119,6 +170,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"C:\\Users\\franky\\workspace\\fy\\sass\\base",
 			"/Users/fyandolino/Documents/Websites/fy/public/js",
 			"/Users/fyandolino/Documents/Websites/fy/sass",
 			"/Users/fyandolino/Documents/Websites/fy/public/js",
@@ -130,6 +182,44 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"//",
+			"h2",
+			"title",
+			"text-decoration: none;",
+			"underline",
+			"slide-1",
+			"slide-out",
+			"33%",
+			"();                    ",
+			"resize",
+			"bcg",
+			"imageAnimation",
+			"-webkit-",
+			"animation",
+			"-webkit-",
+			";\n",
+			"-webkit-",
+			"}\n",
+			"-webkit-",
+			" slide-side-left",
+			"}\n",
+			"tablet-break",
+			"1170px",
+			"slide-out",
+			"25px",
+			"icon-arrow-up",
+			"fy",
+			"slide",
+			"canvas",
+			"\"",
+			"[",
+			"]",
+			"],\n",
+			"]",
+			"[",
+			"chartDisplay",
+			";\n",
+			"1s",
 			"fff",
 			"h1",
 			"cbp-af-inner",
@@ -162,60 +252,30 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "sass/main.scss",
+					"file": "public/canvas.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12229,
+						"buffer_size": 1295,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5363,
-								5363
+								418,
+								418
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6985.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "sass/base/_nav.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -225,20 +285,49 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "public/js/src/main.js",
+					"buffer": 1,
+					"file": "public/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8076,
+						"buffer_size": 9437,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								667,
-								667
+								873,
+								873
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/src/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1662,
+								1662
 							]
 						],
 						"settings":
@@ -248,7 +337,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -260,26 +349,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5242,
+						"buffer_size": 3208,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								354,
-								354
+								2139,
+								2139
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 2310.0,
+						"translation.x": 0.0,
+						"translation.y": 2376.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -357,7 +446,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 191.0,
+	"side_bar_width": 302.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

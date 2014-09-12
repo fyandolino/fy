@@ -69,7 +69,7 @@ main {
 	}
 }
 
-@-webkit-keyframes imgAnim {
+@keyframes imgAnim {
 	0% {
 		filter: saturate(1);
 	}
